@@ -943,6 +943,9 @@
         </div>
       </div>
     </header>
+    <pre>
+        {{menu}}
+    </pre>
   </div>
 </template>
 
@@ -962,10 +965,10 @@ export default {
   },
   mounted() {
       console.log(this.getMenuHeader)
-    // let d = this.axios
-    //   .get("http://localhost:3000/menu")
-    //   .then(response => (this.menu = response.data[0].header));
-    // console.log(d);
+    let d = this.axios
+      .get("http://localhost:3000/menu")
+      .then(response => (this.menu = response.data[0].header));
+    console.log(d);
   }
 };
 </script>

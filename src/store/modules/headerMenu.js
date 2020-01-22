@@ -9,9 +9,11 @@ export default {
         }
     },
     actions: {
-        getMenuAction({commit}) {
-           this.axios.get('http://localhost:3000/menu')
-            .then(response => (commit('getMenuItem', response.data[0].header)))
+        async getMenuAction({commit}) {
+           await this.axios
+           .get('http://localhost:3000/menu')
+           .then(response => (commit('getMenuItem', response.data[0].header)))
+            // commit('getMenuItem', 'asdasd')
         }
     },
     mutations: {
