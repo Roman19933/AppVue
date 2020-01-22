@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "id": 555,
+      "name": "wwwww"
+    }
+  ],
+  "products": [
+    {
+      "id": 555,
+      "name": "wwwww"
+    }
+  ],
+  "menu": [
+    {
+      "header": [ 
+        {
+          "id": 1,
+          "name": "О компании",
+          "sub": ["555", "888"],
+          "link": "/about"
+        },
+        {
+          "id": 2,
+          "name": "Каталог",
+          "sub": ["555", "888"],
+          "link": "/catalog"
+        },
+        {
+          "id": 3,
+          "name": "Акции",
+          "sub": ["555", "888"],
+          "link": "/actions"
+        },
+        {
+          "id": 4,
+          "name": "Отзывы",
+          "sub": ["555", "888"],
+          "link": "/feedback"
+        }
+      ],
+      "footer": [
+        {
+            "id": 11,
+            "name": "О компании",
+            "link": "/about"
+          },
+          {
+            "id": 21,
+            "name": "Каталог",
+            "link": "/catalog"
+          },
+          {
+            "id": 31,
+            "name": "Акции",
+            "link": "/actions"
+          },
+          {
+            "id": 41,
+            "name": "Отзывы",
+            "link": "/feedback"
+          }
+      ]
+    }
+  ]
+}
