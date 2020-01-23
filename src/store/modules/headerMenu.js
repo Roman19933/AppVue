@@ -1,24 +1,25 @@
+import axios from "axios"
 export default {
     state: {
         menuHeader:[]
 
     },
-    getters: {
-        getMenuHeader(state) {
-            return state.menuHeader
-        }
-    },
     actions: {
         async getMenuAction({commit}) {
-           await this.axios
-           .get('http://localhost:3000/menu')
+            return await axios.get('http://localhost:3000/menu')
            .then(response => (commit('getMenuItem', response.data[0].header)))
-            // commit('getMenuItem', 'asdasd')
+           .catch(error => console.log('error:',error))
+        // commit('getMenuItem', s)
         }
     },
     mutations: {
         getMenuItem(state,payload) {
             state.menuHeader = payload
+        }
+    },
+    getters: {
+        getMenuHeader(state) {
+            return state.menuHeader
         }
     }
 }

@@ -36,7 +36,7 @@
                     <use xlink:href="../assets/img/sprite.svg#arrow"></use>
                   </svg>
                 </a>
-                <ul class="collapse-link__block" v-show="phone">
+                <ul class="collapse-link__block">
                   <li>
                     <a href="tel:+38 (050) 954-88-05">+38 (050) 954-88-05</a>
                   </li>
@@ -51,46 +51,25 @@
               <div class="header__link">
                 <nav>
                   <ul class="header__link-items">
-                    <!-- <router-link 
-                                    tag="li"
-                                    class="header__link-item"
-                                >
-                                <a href="#"></a>
-                                </router-link> -->
-                    <!-- <li class="header__link-item">
-                                    <a href="#">О компании</a>
-                                </li>
-                                <li class="header__link-item header__link-item__catalog collapse-link">
-                                    <a href="#" class="catalog">
-                                        <span>Каталог</span>
-                                        <svg class="icon-svg icon-svg-arrow collapse-arrow"><use xlink:href="../assets/img/sprite.svg#arrow"></use></svg>
-                                    </a>
-                                    <div class="collapse-link__block fontsize">
-                                        <ul>
-                                            <li>
-                                                <a href="#">Категория 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Категория 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Категория 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Категория 4</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Категория 5</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="header__link-item">
-                                    <a href="#">Акции</a>
-                                </li>
-                                <li class="header__link-item">
-                                    <a href="#">Отзывы</a>
-                                </li> -->
+                    <router-link 
+                      v-for="(item,index) in getMenuHeader" :key="index"
+                      tag="li"
+                      class="header__link-item collapse-link"
+                      activeClass="active"
+                      :to = item.link
+                    >
+                      <a href="#" class="main-link" @click="isOpen=!isOpen">
+                        {{item.name}}
+                      <svg v-show="item.sub.length" class="icon-svg icon-svg-arrow collapse-arrow"><use xlink:href="../assets/img/sprite.svg#arrow"></use></svg>
+                      </a>
+                      <div class="collapse-link__block fontsize" v-for="(subItem,index) in item.sub" :key="index" v-show="!subItem.length && isOpen">
+                          <ul>
+                            <router-link tag="li" :to= "item.link + '/' + subItem.name">
+                                  <a href="#">{{subItem.name}}</a>
+                            </router-link>
+                          </ul>
+                      </div>
+                    </router-link>
                   </ul>
                 </nav>
               </div>
@@ -944,7 +923,7 @@
       </div>
     </header>
     <pre>
-        {{menu}}
+        {{this.getMenuHeader}}
     </pre>
   </div>
 </template>
@@ -955,20 +934,20 @@ export default {
   components: {},
   data() {
     return {
-      phone: true,
+      isOpen: false,
       menu: []
     };
   },
-  methods: {},
-  computed: {
-      ...mapGetters(['getMenuHeader'])
+  methods: {
+    // ...mapMutations(['getMenuItem'])
   },
+  computed: {
+    ...mapGetters(['getMenuHeader'])
+    },
   mounted() {
-      console.log(this.getMenuHeader)
-    let d = this.axios
-      .get("http://localhost:3000/menu")
-      .then(response => (this.menu = response.data[0].header));
-    console.log(d);
+    this.$store.dispatch('getMenuAction')
+
+
   }
 };
 </script>

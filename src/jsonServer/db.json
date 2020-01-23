@@ -17,25 +17,49 @@
         {
           "id": 1,
           "name": "О компании",
-          "sub": ["555", "888"],
+          "sub": [
+            {
+              "id":1,
+              "name":"sss"
+            }
+          ],
           "link": "/about"
         },
         {
           "id": 2,
           "name": "Каталог",
-          "sub": ["555", "888"],
+          "sub": [
+            {
+              "id":1,
+              "name":"sss"
+            },
+            {
+              "id":2,
+              "name":"ddd"
+            }
+          ],
           "link": "/catalog"
         },
         {
           "id": 3,
           "name": "Акции",
-          "sub": ["555", "888"],
+          "sub": [
+            {
+              "id":1,
+              "name":"ddd"
+            }
+          ],
           "link": "/actions"
         },
         {
           "id": 4,
           "name": "Отзывы",
-          "sub": ["555", "888"],
+          "sub": [
+            {
+              "id":1,
+              "name":"sss"
+            }
+          ],
           "link": "/feedback"
         }
       ],
