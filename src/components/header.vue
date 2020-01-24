@@ -9,26 +9,14 @@
               <span class="mobile__middle"></span>
               <span class="mobile__bottom"></span>
             </div>
+            <router-link tag="li" to="/">
             <a href="#">
               <img src="../assets/img/logo.png" alt=" АгроМайстер" />
             </a>
+            </router-link>
           </div>
           <div class="header__menu">
             <div class="header__menu-wrapper">
-              <!-- <div class="header__menu-mobile">
-                        <a href="#" class="button button_green button__menu">
-                            <svg class="icon-svg icon-svg-email-menu button__menu_mail"><use xlink:href="../assets/img/sprite.svg#email-menu"></use></svg>
-                            Регистрация
-                        </a>
-                        <a href="#" class="button button__menu button__menu_bg">Войти</a>
-                    </div>
-                    <div class="header__menu-mobile header__menu-mobile_auth" style="display:none;">
-                        <a href="#" class="button button_green button__menu">
-                            <svg class="icon-svg icon-svg-user button__menu_mail"><use xlink:href="../assets/img/sprite.svg#user"></use></svg>
-                            Профиль
-                        </a>
-                        <a href="#" class="button button__menu button__menu_bg">Выйти</a>
-                    </div> -->
               <div class="header__phone collapse-link">
                 <a href="#">
                   <span>+38 (050) 954-88-05 </span>
@@ -54,17 +42,18 @@
                     <router-link 
                       v-for="(item,index) in getMenuHeader" :key="index"
                       tag="li"
-                      class="header__link-item collapse-link"
+                      class="header__link-item"
                       activeClass="active"
+                      :class="{'collapse-link': item.sub.length}"
                       :to = item.link
                     >
-                      <a href="#" class="main-link" @click="isOpen=!isOpen">
+                      <a href="#" class="main-link">
                         {{item.name}}
                       <svg v-show="item.sub.length" class="icon-svg icon-svg-arrow collapse-arrow"><use xlink:href="../assets/img/sprite.svg#arrow"></use></svg>
                       </a>
-                      <div class="collapse-link__block fontsize" v-for="(subItem,index) in item.sub" :key="index" v-show="!subItem.length && isOpen">
+                      <div class="collapse-link__block fontsize" v-show="item.sub.length">
                           <ul>
-                            <router-link tag="li" :to= "item.link + '/' + subItem.name">
+                            <router-link v-for="(subItem,index) in item.sub" :key="index" tag="li" :to= "item.link + '/' + subItem.name">
                                   <a href="#">{{subItem.name}}</a>
                             </router-link>
                           </ul>
@@ -86,20 +75,23 @@
           </div>
           <div class="header__auth">
             <div class="collapse-link">
+              <router-link 
+              tag="li"
+              to="#">
               <a href="#">
-                <!-- <img src="img/na.png" alt="" class="header__auth-image"> -->
                 <svg class="icon-svg icon-svg-login header__auth-image">
                   <use xlink:href="../assets/img/sprite.svg#login"></use>
                 </svg>
               </a>
+              </router-link>
               <div class="collapse-link__block fontsize width">
                 <ul>
-                  <li>
+                  <router-link tag="li" to="/registration">
                     <a href="#">Регистрация</a>
-                  </li>
-                  <li>
+                  </router-link>
+                  <router-link tag="li" to="/enter">
                     <a href="#">Войти</a>
-                  </li>
+                  </router-link>
                 </ul>
               </div>
             </div>
@@ -922,9 +914,6 @@
         </div>
       </div>
     </header>
-    <pre>
-        {{this.getMenuHeader}}
-    </pre>
   </div>
 </template>
 

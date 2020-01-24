@@ -287,8 +287,8 @@ body {
     -webkit-transition: .3s;
     transition: .3s; }
   .collapse-link__block {
-    /* opacity: 0;
-    visibility: hidden; */
+    opacity: 0;
+    visibility: hidden;
     -webkit-transition: .3s;
     transition: .3s;
     line-height: 37px;
@@ -318,25 +318,28 @@ body {
       font-size: 15px; }
     .collapse-link__block.width {
       width: 155px; }
-  .collapse-link.active .collapse-link__block {
+  .collapse-link:hover .collapse-link__block {
     opacity: 1;
     visibility: visible; }
     .collapse-link.active .collapse-link__block a:after, .collapse-link.active .collapse-link__block a:before {
       content: initial; }
-  .collapse-link.active .collapse-arrow {
+  .collapse-link:hover .collapse-arrow {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
     fill: #B1C962; }
-  .collapse-link.active a {
-    position: relative; }
-    .collapse-link.active a:after {
+  .collapse-link:hover a {
+    position: relative;
+ }
+  .collapse-link:hover .main-link {
+  color:#454545!important; }
+    .collapse-link:hover .main-link:after {
       content: '';
       height: 15px;
       width: 100%;
       background: transparent;
       position: absolute;
       bottom: -15px; }
-  .collapse-link a:before {
+  .collapse-link:hover a:before {
     content: initial; }
 
 .form-group {

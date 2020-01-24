@@ -13,78 +13,40 @@
   ],
   "menu": [
     {
-      "header": [ 
+      "id": 1,
+      "name": "О компании",
+      "sub": [
+      ],
+      "link": "/about"
+    },
+    {
+      "id": 2,
+      "name": "Каталог",
+      "sub": [
         {
-          "id": 1,
-          "name": "О компании",
-          "sub": [
-            {
-              "id":1,
-              "name":"sss"
-            }
-          ],
-          "link": "/about"
+          "id":1,
+          "name":"sss"
         },
         {
-          "id": 2,
-          "name": "Каталог",
-          "sub": [
-            {
-              "id":1,
-              "name":"sss"
-            },
-            {
-              "id":2,
-              "name":"ddd"
-            }
-          ],
-          "link": "/catalog"
-        },
-        {
-          "id": 3,
-          "name": "Акции",
-          "sub": [
-            {
-              "id":1,
-              "name":"ddd"
-            }
-          ],
-          "link": "/actions"
-        },
-        {
-          "id": 4,
-          "name": "Отзывы",
-          "sub": [
-            {
-              "id":1,
-              "name":"sss"
-            }
-          ],
-          "link": "/feedback"
+          "id":2,
+          "name":"ddd"
         }
       ],
-      "footer": [
-        {
-            "id": 11,
-            "name": "О компании",
-            "link": "/about"
-          },
-          {
-            "id": 21,
-            "name": "Каталог",
-            "link": "/catalog"
-          },
-          {
-            "id": 31,
-            "name": "Акции",
-            "link": "/actions"
-          },
-          {
-            "id": 41,
-            "name": "Отзывы",
-            "link": "/feedback"
-          }
-      ]
+      "link": "/catalog"
+    },
+    {
+      "id": 3,
+      "name": "Акции",
+      "sub": [
+      ],
+      "link": "/actions"
+    },
+    {
+      "id": 4,
+      "name": "Отзывы",
+      "sub": [
+      ],
+      "link": "/feedback"
     }
   ]
 }

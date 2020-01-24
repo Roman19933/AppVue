@@ -7,7 +7,7 @@ export default {
     actions: {
         async getMenuAction({commit}) {
             return await axios.get('http://localhost:3000/menu')
-           .then(response => (commit('getMenuItem', response.data[0].header)))
+           .then(response => (commit('getMenuItem', response.data)))
            .catch(error => console.log('error:',error))
         // commit('getMenuItem', s)
         }
