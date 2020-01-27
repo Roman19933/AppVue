@@ -1,6 +1,6 @@
 <template>
     <div class="form-group form-group__width form-group_registration">
-      <input :type="type" :placeholder="placeholder" :class="classes" @input="$emit('inputValue', $event.target.value)"/>
+      <input :type="type" v-mask="mask" :placeholder="placeholder" :class="classes" @input="$emit('inputValue', $event.target.value)"/>
       <img
         src="../../../assets/img/ok.png"
         alt=""
@@ -16,6 +16,7 @@
                 <use xlink:href="../../../assets/img/sprite.svg#view"></use>
               </svg>
           </button>
+          <p>{{message}}</p>
   </div>
 </template>
 
@@ -33,16 +34,24 @@ export default {
     placeholder: {
       type:String,
       default:null
+    },
+    mask: {
+      type:String,
+      default:null
+    },
+    message: {
+      type:Array,
+      default:null
     }
   },
   methods: {
-        greet: function (event) {
-      // `this` внутри методов указывает на экземпляр Vue
-      // `event` — нативное событие DOM
-      if (event) {
-        alert(event.target.type)
-      }
-    }
+    //     greet: function (event) {
+    //   // `this` внутри методов указывает на экземпляр Vue
+    //   // `event` — нативное событие DOM
+    //   if (event) {
+    //     alert(event.target.type)
+    //   }
+    // }
   }
 };
 </script>
