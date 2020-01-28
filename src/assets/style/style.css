@@ -351,7 +351,8 @@ body {
     font-size: 12px;
     height: 36px;
     outline: none;
-    padding-top: 2px; }
+    padding-top: 2px; 
+  transition: .3s;}
     .form-group input::-webkit-input-placeholder, .form-group textarea::-webkit-input-placeholder {
       -webkit-transition: .3s;
       transition: .3s;
@@ -432,7 +433,9 @@ body {
     border: 1px solid #EB5757; }
   .form-group.error p {
     color: #EB5757;
-    font-size: 12px; }
+    font-size: 12px; 
+    margin-top: 5px;
+  }
   .form-group.error .form-group__img_error {
     display: block; }
   .form-group.success input, .form-group.success textarea {

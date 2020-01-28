@@ -1,6 +1,6 @@
 <template>
   <button :type="type" :class="classes">
-    Зарегистрироваться
+    {{value}}
   </button>
 </template>
 
@@ -12,6 +12,10 @@ export default {
             default:'button'
         },
         type: {
+            type:String,
+            default:'button'
+        },
+        value: {
             type:String,
             default:'button'
         }

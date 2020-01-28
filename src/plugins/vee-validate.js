@@ -1,26 +1,10 @@
-// import { required,  } from "vee-validate/dist/rules";
-// import { extend } from "vee-validate";
-// extend('required', {
-//     ...required,
-//     message: 'This field is required'
-//   });
-// import { extend } from 'vee-validate';
-// import * as rules from 'vee-validate/dist/rules';
-
-// Object.keys(rules).forEach(rule => {
-//   extend(rule, rules[rule]);
-// });
-
-// // with typescript
-// for (let [rule, validation] of Object.entries(rules)) {
-//   extend(rule, {
-//     ...validation
-//   });
-// }
+import Vue from 'vue'
 import { extend } from 'vee-validate';
 import * as rules from 'vee-validate/dist/rules';
 import { messages } from 'vee-validate/dist/locale/en.json';
-
+import {ValidationProvider,ValidationObserver} from "vee-validate"
+Vue.component('ValidationProvider',ValidationProvider)
+Vue.component('ValidationObserver',ValidationObserver)
 Object.keys(rules).forEach(rule => {
   extend(rule, {
     ...rules[rule], // copies rule configuration
