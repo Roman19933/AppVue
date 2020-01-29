@@ -1,5 +1,5 @@
 <template>
-    <div class="form-group form-group__width form-group_registration" :class="{'error':this.message.length, 'success':isValid}">
+    <div class="form-group form-group_registration" :class="{'error':this.message.length, 'success':isValid, 'form-group__width': this.width}">
       <input 
         :type="type" 
         v-mask="mask" 
@@ -67,6 +67,10 @@ export default {
       default:''
     },
     isValid: {
+      type:Boolean,
+      default:false
+    },
+    width: {
       type:Boolean,
       default:false
     }

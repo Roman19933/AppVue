@@ -15,8 +15,7 @@
     {
       "id": 1,
       "name": "О компании",
-      "sub": [
-      ],
+      "sub": [],
       "link": "/about"
     },
     {
@@ -24,12 +23,12 @@
       "name": "Каталог",
       "sub": [
         {
-          "id":1,
-          "name":"sss"
+          "id": 1,
+          "name": "sss"
         },
         {
-          "id":2,
-          "name":"ddd"
+          "id": 2,
+          "name": "ddd"
         }
       ],
       "link": "/catalog"
@@ -37,16 +36,40 @@
     {
       "id": 3,
       "name": "Акции",
-      "sub": [
-      ],
+      "sub": [],
       "link": "/actions"
     },
     {
       "id": 4,
       "name": "Отзывы",
-      "sub": [
-      ],
+      "sub": [],
       "link": "/feedback"
+    }
+  ],
+  "users": [
+    {
+      "fio": "as",
+      "email": "s@ukr.net",
+      "phone": "+38 (333)-333-33-33",
+      "password": "222222",
+      "repassword": "222222",
+      "id": 1
+    },
+    {
+      "fio": "Саша Белий",
+      "email": "below@uk.net",
+      "phone": "+38 (066)-879-87-84",
+      "password": "123456789",
+      "repassword": "123456789",
+      "id": 2
+    },
+    {
+      "fio": "Alex Dot",
+      "email": "alex@gmail.com",
+      "phone": "+38 (254)-154-44-44",
+      "password": "111111",
+      "repassword": "111111",
+      "id": 3
     }
   ]
 }
