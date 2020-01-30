@@ -21,12 +21,10 @@
                     <router-link tag="li" to="/registration">
                         <a class="button button__registration">Регистрация</a>
                     </router-link>
-                    <!-- <a href="#" class="button button__registration">Регистрация</a> -->
                 </div>
                 <p v-if="changed">cdddd</p>
             </form>
         </ValidationObserver>
-        <!-- <pre>{{this.authUser}}</pre> -->
     </div>
 </template>
 <script>
@@ -39,30 +37,30 @@ import {mapGetters,mapActions} from "vuex"
                 email:'',
                 password:'',
                 rememberMe:false,
-                isUser:false,
             }
         },
         computed: {
             ...mapGetters(['getUser']),
-            authUser:function() {
-                return this.getUser.filter(item => {
-                    if (this.email == item.email && this.password == item.password) {
-                        this.isUser = true
-                    } else {
-                        this.isUser = false
-                    }
-                });
-            }
         },
         mounted() {
             this.$store.dispatch('getUserAction')
-
+            // this.$store.dispatch('getUseId')
+            const userId = JSON.parse(localStorage.getItem('user')).findIndex(item => {
+                        return item.id == JSON.parse(localStorage.getItem('userId'))
+                    })
+                    localStorage.setItem("user1",JSON.stringify(userId))
+                    console.log(userId)
+                    // console.log(JSON.parse(localStorage.getItem('userId')))
+                    // console.log(this.getUseId)
         },
         methods: {
             enterUser:function() {
-                if (this.isUser) {
-                    this.$router.push('/')
-                } 
+                this.getUser.find(item => {
+                    if (item.email == this.email && item.password == this.password) {
+                        this.$router.push("/");
+                        localStorage.setItem("userId", JSON.stringify(item.id));
+                    } 
+                });
             },
         },
         components: {

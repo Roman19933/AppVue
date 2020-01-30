@@ -3,24 +3,30 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Registration from '../views/Registration.vue'
 import Enter from '../views/Enter.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Главная',
     component: Home
   },
   {
     path: '/registration',
-    name: 'registration',
+    name: 'Регестрация',
     component: Registration
   },
   {
     path: '/enter',
-    name: 'enter',
+    name: 'Вход',
     component: Enter
+  },
+  {
+    path: '/profile',
+    name: 'Профиль',
+    component: Profile
   },
 ]
 

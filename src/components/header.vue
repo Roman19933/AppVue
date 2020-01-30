@@ -74,7 +74,7 @@
             </div>
           </div>
           <div class="header__auth">
-            <div class="collapse-link">
+            <div class="collapse-link" v-if="!isUser">
               <router-link 
               tag="li"
               to="#">
@@ -95,7 +95,7 @@
                 </ul>
               </div>
             </div>
-            <div class="collapse-link" style="display:none;">
+            <div class="collapse-link" v-else>
               <a href="#">
                 <!-- <img src="img/user.png" alt="" class="header__auth-image"> -->
                 <svg class="icon-svg icon-svg-user-svg header__auth-image">
@@ -104,11 +104,14 @@
               </a>
               <div class="collapse-link__block fontsize width">
                 <ul>
-                  <li>
+                  <router-link tag="li" to="/profile">
+                       <a href="#">Профиль</a>
+                  </router-link>
+                  <!-- <li>
                     <a href="#">Профиль</a>
-                  </li>
+                  </li> -->
                   <li>
-                    <a href="#">Выйти</a>
+                    <a href="#" @click="logOut">Выйти</a>
                   </li>
                 </ul>
               </div>
@@ -924,11 +927,20 @@ export default {
   data() {
     return {
       isOpen: false,
-      menu: []
+      menu: [],
+      isUser:JSON.parse(localStorage.getItem("userId")),
+      out:false
+
     };
   },
   methods: {
     // ...mapMutations(['getMenuItem'])
+    logOut:function() {
+      localStorage.removeItem("userId")
+      // this.out = true
+      this.$router.push('/enter')
+      console.log(localStorage)
+    }
   },
   computed: {
     ...mapGetters(['getMenuHeader'])
