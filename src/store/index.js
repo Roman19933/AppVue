@@ -2,12 +2,16 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import headerMenu from "./modules/headerMenu"
 import registration from "./modules/registration"
+import categories from "./modules/categories"
+import product from "./modules/product"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     modules: {
         headerMenu,
-        registration
+        registration,
+        categories,
+        product
     }
 })

@@ -1,12 +1,13 @@
 import axios from "axios"
 export default {
     state: {
-        user:JSON.parse(localStorage.getItem("user") || "[]"),
-        userId:JSON.parse(localStorage.getItem('userId'))
+        // user:JSON.parse(localStorage.getItem("user") || "[]"),
+        user:[],
+        userId:JSON.parse(localStorage.getItem('userId') || null)
     },
     actions: {
         async getUserAction ({commit,state}) {
-            const user = await axios.get('http://localhost:3000/users/' + state.userId)
+            const user = await axios.get('http://localhost:3000/users')
             .then(response => response.data)
             commit('getUser', user)
         },
@@ -17,7 +18,7 @@ export default {
     mutations: {
         getUser(state,payload) {
             state.user = payload
-            localStorage.setItem("user",JSON.stringify(state.user))
+            // localStorage.setItem("user",JSON.stringify(state.user))
         },
         // getUserToId(state,payload) {
         //     // const cloneUser = state.user.concat()

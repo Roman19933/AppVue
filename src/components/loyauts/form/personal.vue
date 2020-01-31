@@ -38,12 +38,12 @@ import Button from "../button/button"
     export default {
         data() {
             return {
-                fio:'',
-                email:'',
+                fio:'wewewe',
+                email:33,
                 phone:'',
                 oldPassword:'',
                 newPassword:'',
-                rePassword:'',
+                rePassword:'e',
             }
         },
           components: {

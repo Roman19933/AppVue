@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Registration from '../views/Registration.vue'
 import Enter from '../views/Enter.vue'
 import Profile from '../views/Profile.vue'
+import Catalog from '../views/Catalog.vue'
+import catalogItem from '../views/CatItem.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,16 @@ const routes = [
     path: '/profile',
     name: 'Профиль',
     component: Profile
+  },
+  {
+    path: '/catalog',
+    name: 'Каталог',
+    component: Catalog,
+  },
+  {
+    path: '/catalog/:id',
+    name: 'Каталог',
+    component: catalogItem,
   },
 ]
 

@@ -1,16 +1,4 @@
 {
-  "categories": [
-    {
-      "id": 555,
-      "name": "wwwww"
-    }
-  ],
-  "products": [
-    {
-      "id": 555,
-      "name": "wwwww"
-    }
-  ],
   "menu": [
     {
       "id": 1,
@@ -24,11 +12,11 @@
       "sub": [
         {
           "id": 1,
-          "name": "sss"
+          "name": "Category1"
         },
         {
           "id": 2,
-          "name": "ddd"
+          "name": "Category2"
         }
       ],
       "link": "/catalog"
@@ -79,5 +67,54 @@
       "repassword": "test11",
       "id": 4
     }
+  ],
+  "categories": [
+      {
+        "id":1,
+        "name":"Семена",
+        "linkName":"Category",
+        "image":"cat-1.png"
+      },
+      {
+        "id":2,
+        "name":"Category2",
+        "linkName":"Category2",
+        "image":"cat-1.png"
+      },
+      {
+        "id":3,
+        "name":"Category3",
+        "linkName":"Category3",
+        "image":"cat-1.png"
+      },
+      {
+        "id":4,
+        "name":"Category4",
+        "linkName":"Category4",
+        "image":"cat-1.png"
+      },
+      {
+        "id":5,
+        "name":"Category5",
+        "linkName":"Category5",
+        "image":"cat-1.png"
+      }
+  ],
+  "products": [
+      {
+        "id":1,
+        "article":24224,
+        "name":"Products1",
+        "image":"cat-1.png",
+        "describe":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+        "category":"Category4",
+        "oldPrice":null,
+        "newPrice":null,
+        "discount":false,
+        "isProduct": false,
+        "timer":false,
+        "isMain":false,
+        "isRecomended":false
+      }
   ]
 }

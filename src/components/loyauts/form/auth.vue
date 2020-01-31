@@ -45,11 +45,11 @@ import {mapGetters,mapActions} from "vuex"
         mounted() {
             this.$store.dispatch('getUserAction')
             // this.$store.dispatch('getUseId')
-            const userId = JSON.parse(localStorage.getItem('user')).findIndex(item => {
-                        return item.id == JSON.parse(localStorage.getItem('userId'))
-                    })
-                    localStorage.setItem("user1",JSON.stringify(userId))
-                    console.log(userId)
+            // const userId = JSON.parse(localStorage.getItem('user')).findIndex(item => {
+            //             return item.id == JSON.parse(localStorage.getItem('userId'))
+            //         })
+                    // localStorage.setItem("user1",JSON.stringify(userId))
+                    // console.log(userId)
                     // console.log(JSON.parse(localStorage.getItem('userId')))
                     // console.log(this.getUseId)
         },
@@ -59,6 +59,7 @@ import {mapGetters,mapActions} from "vuex"
                     if (item.email == this.email && item.password == this.password) {
                         this.$router.push("/");
                         localStorage.setItem("userId", JSON.stringify(item.id));
+                        console.log(item)
                     } 
                 });
             },

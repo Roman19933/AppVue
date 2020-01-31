@@ -1382,7 +1382,7 @@ body {
       font-size: 15px; }
 
 .home__slider-background {
-  background-image: url("/assets/img/bg1.jpg");
+  background-image: url("../img/bg1.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
