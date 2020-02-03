@@ -17,8 +17,9 @@
                 <div class="min-count">
                     <p>Мин. сумма заказа - <span>300</span> грн.</p>
                 </div>
-                <div class="category__product">
-                    <div class="card card_product" v-for="(item,index) in getCategories" :key="index">
+                <!-- <div class="category__product"> -->
+                    <cardCategory />
+                    <!-- <div class="card card_product" v-for="(item,index) in getCategories" :key="index">
                         <div class="card__title card__title-product">
                             <router-link tag="a" :to="'/catalog/' + item.linkName">
                                 {{item.name}}
@@ -32,8 +33,8 @@
                                 <img src="../assets/img/cat-1.png" alt="">
                             </router-link>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
                 <div class="home__seo home__seo_category default-container">
                     <p>Не следует, однако забывать, что реализация намеченных плановых заданий обеспечивает широкому кругу
                         (специалистов) участие в формировании существенных финансовых и административных условий. Повседневная
@@ -45,18 +46,22 @@
 </template>
 
 <script>
-import {mapGetters,mapActions} from "vuex"
+// import {mapGetters,mapActions} from "vuex"
+import cardCategory from "../components/loyauts/card/categoryCard"
 export default {
     data() {
         return {
         }
     },
-    computed: {
-      ...mapGetters(['getCategories'])
+    components: {
+        cardCategory
     },
-    mounted() {
-      this.$store.dispatch('getCategoriesAction')
-    }
+    // computed: {
+    //   ...mapGetters(['getCategories'])
+    // },
+    // mounted() {
+    //   this.$store.dispatch('getCategoriesAction')
+    // }
 }
 </script>
 

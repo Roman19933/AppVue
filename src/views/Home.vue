@@ -648,13 +648,13 @@
               <div class="home__product-title title">
                   <h2>Каталог продукции</h2>
               </div>
-              <div class="home__product-products">
-                  <div class="card card_product" v-for="(item,index) in getCategories" :key="index">
+              <!-- <div class="home__product-products"> -->
+                  <cardCategory />
+                  <!-- <div class="card card_product" v-for="(item,index) in getCategories" :key="index">
                       <div class="card__title card__title-product">
                         <router-link tag="a" :to="'/catalog/' + item.linkName">
                             {{item.name}}
                         </router-link>
-                          <!-- <a href="#">{{item.name}}</a> -->
                           <div class="card__info-price card__title-count">
                               <span>182 товара</span>
                           </div>
@@ -664,8 +664,8 @@
                             <img src="../assets/img/cat-1.png" alt="">
                         </router-link>
                       </div>
-                  </div>
-              </div>
+                  </div> -->
+              <!-- </div> -->
               <img src="../assets/img/grain1.png" alt="" class="grain">
           </div>
           <div class="home__discount">
@@ -967,14 +967,18 @@
 </template>
 
 <script>
-import {mapGetters,mapActions} from "vuex"
+// import {mapGetters,mapActions} from "vuex"
+import cardCategory from "../components/loyauts/card/categoryCard"
 export default {
-    computed: {
-      ...mapGetters(['getCategories'])
+    // computed: {
+    //   ...mapGetters(['getCategories'])
+    // },
+     components: {
+        cardCategory
     },
-    mounted() {
-      this.$store.dispatch('getCategoriesAction')
-    }
+    // mounted() {
+    //   this.$store.dispatch('getCategoriesAction')
+    // }
   }
 </script>
 

@@ -37,7 +37,6 @@ const routes = [
   },
   {
     path: '/catalog/:id',
-    name: 'Каталог',
     component: catalogItem,
   },
 ]

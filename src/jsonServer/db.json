@@ -36,7 +36,7 @@
   ],
   "users": [
     {
-      "fio": "as",
+      "fio": "assds",
       "email": "s@ukr.net",
       "phone": "+38 (333)-333-33-33",
       "password": "111111",
@@ -103,31 +103,31 @@
   "categories": [
     {
       "id": 1,
-      "name": "Семена",
+      "name": "Семена1",
       "linkName": "Category",
       "image": "cat-1.png"
     },
     {
       "id": 2,
-      "name": "Category2",
+      "name": "Семена2",
       "linkName": "Category2",
       "image": "cat-1.png"
     },
     {
       "id": 3,
-      "name": "Category3",
+      "name": "Семена3",
       "linkName": "Category3",
       "image": "cat-1.png"
     },
     {
       "id": 4,
-      "name": "Category4",
+      "name": "Семена4",
       "linkName": "Category4",
       "image": "cat-1.png"
     },
     {
       "id": 5,
-      "name": "Category5",
+      "name": "Семена5",
       "linkName": "Category5",
       "image": "cat-1.png"
     }
@@ -139,7 +139,82 @@
       "name": "Products1",
       "image": "cat-1.png",
       "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
-      "category": "Category4",
+      "category": "Семена",
+      "oldPrice": null,
+      "newPrice": null,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 1,
+      "article": 24224,
+      "name": "Products1",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Семена2",
+      "oldPrice": null,
+      "newPrice": null,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 1,
+      "article": 24224,
+      "name": "Products1",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Семена3",
+      "oldPrice": null,
+      "newPrice": null,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 1,
+      "article": 24224,
+      "name": "Products1",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Семена1",
+      "oldPrice": null,
+      "newPrice": null,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 1,
+      "article": 24224,
+      "name": "Products1",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Семена4",
+      "oldPrice": null,
+      "newPrice": null,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 2,
+      "article": 32323,
+      "name": "Products2",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Семена1",
       "oldPrice": null,
       "newPrice": null,
       "discount": false,
