@@ -39,16 +39,16 @@
       "fio": "as",
       "email": "s@ukr.net",
       "phone": "+38 (333)-333-33-33",
-      "password": "222222",
-      "repassword": "222222",
+      "password": "111111",
+      "repassword": "111111",
       "id": 1
     },
     {
-      "fio": "Саша Белийq",
+      "fio": "Саша Белийqasdasd",
       "email": "below@uk.net",
       "phone": "+38 (066)-879-87-84",
-      "password": "123456789",
-      "repassword": "123456789",
+      "password": "222222",
+      "repassword": "222222",
       "id": 2
     },
     {
@@ -66,55 +66,87 @@
       "password": "test11",
       "repassword": "test11",
       "id": 4
+    },
+    {
+      "fio": "s",
+      "email": "d@ukr.net",
+      "phone": "+38 (222)-222-22-22",
+      "password": "111111",
+      "repassword": "111111",
+      "id": 5
+    },
+    {
+      "fio": "test2",
+      "email": "test2@ukr.net",
+      "phone": "+38 (887)-878-78-78",
+      "password": "000000",
+      "repassword": "000000",
+      "id": 6
+    },
+    {
+      "fio": "test3",
+      "email": "test3@ukr.net",
+      "phone": "+38 (151)-515-11-51",
+      "password": "1111111",
+      "repassword": "1111111",
+      "id": 7
+    },
+    {
+      "fio": "test4",
+      "email": "test4@ukr.bet",
+      "phone": "+38 (444)-444-44-44",
+      "password": "wwwwww",
+      "repassword": "wwwwww",
+      "id": 8
     }
   ],
   "categories": [
-      {
-        "id":1,
-        "name":"Семена",
-        "linkName":"Category",
-        "image":"cat-1.png"
-      },
-      {
-        "id":2,
-        "name":"Category2",
-        "linkName":"Category2",
-        "image":"cat-1.png"
-      },
-      {
-        "id":3,
-        "name":"Category3",
-        "linkName":"Category3",
-        "image":"cat-1.png"
-      },
-      {
-        "id":4,
-        "name":"Category4",
-        "linkName":"Category4",
-        "image":"cat-1.png"
-      },
-      {
-        "id":5,
-        "name":"Category5",
-        "linkName":"Category5",
-        "image":"cat-1.png"
-      }
+    {
+      "id": 1,
+      "name": "Семена",
+      "linkName": "Category",
+      "image": "cat-1.png"
+    },
+    {
+      "id": 2,
+      "name": "Category2",
+      "linkName": "Category2",
+      "image": "cat-1.png"
+    },
+    {
+      "id": 3,
+      "name": "Category3",
+      "linkName": "Category3",
+      "image": "cat-1.png"
+    },
+    {
+      "id": 4,
+      "name": "Category4",
+      "linkName": "Category4",
+      "image": "cat-1.png"
+    },
+    {
+      "id": 5,
+      "name": "Category5",
+      "linkName": "Category5",
+      "image": "cat-1.png"
+    }
   ],
   "products": [
-      {
-        "id":1,
-        "article":24224,
-        "name":"Products1",
-        "image":"cat-1.png",
-        "describe":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
-        "category":"Category4",
-        "oldPrice":null,
-        "newPrice":null,
-        "discount":false,
-        "isProduct": false,
-        "timer":false,
-        "isMain":false,
-        "isRecomended":false
-      }
+    {
+      "id": 1,
+      "article": 24224,
+      "name": "Products1",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Category4",
+      "oldPrice": null,
+      "newPrice": null,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    }
   ]
 }

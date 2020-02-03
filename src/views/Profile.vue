@@ -1,19 +1,19 @@
 <template>
-    <div>
-        <div class="person">
-            <div class="person__wrapper default-container padding">
-                <!-- <nav aria-label="breadcrumb">
+  <div>
+    <div class="person">
+      <div class="person__wrapper default-container padding">
+        <!-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Главная</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Сброс пароля</li>
                     </ol>
-                </nav> -->
-                <img src="img/grain-person.png" alt="" class="grain">
-                <div class="person__title title">
-                    <h2>Личный кабинет</h2>
-                </div>
-                <Personal/>
-                <!-- <form action="#">
+        </nav>-->
+        <img src="img/grain-person.png" alt class="grain" />
+        <div class="person__title title">
+          <h2>Личный кабинет</h2>
+        </div>
+        <Personal :userAuthId="userAuthId" />
+        <!-- <form action="#">
                     <div class="person__form">
                         <div class="person__form-input">
                             <div class="person__info">
@@ -62,21 +62,25 @@
                         </div>
                         <button type="submit" class="button button_green">Сохранить все изменения</button>
                     </div>
-                </form> -->
-            </div>
-        </div>
+        </form>-->
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import Personal from "../components/loyauts/form/personal"
-    export default {
-        components: {
-            Personal
-        }
-    }
+import Personal from "../components/loyauts/form/profile";
+export default {
+  data() {
+    return {
+      userAuthId: JSON.parse(localStorage.getItem("userId"))
+    };
+  },
+  components: {
+    Personal
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
