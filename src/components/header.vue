@@ -10,18 +10,18 @@
               <span class="mobile__bottom"></span>
             </div>
             <router-link tag="li" to="/">
-            <a href="#">
-              <img src="../assets/img/logo.png" alt=" АгроМайстер" />
-            </a>
+              <a href="#">
+                <img src="../assets/img/logo.png" alt=" АгроМайстер" />
+              </a>
             </router-link>
           </div>
           <div class="header__menu">
             <div class="header__menu-wrapper">
               <div class="header__phone collapse-link">
                 <a href="#">
-                  <span>+38 (050) 954-88-05 </span>
+                  <span>+38 (050) 954-88-05</span>
                   <svg class="icon-svg icon-svg-arrow collapse-arrow">
-                    <use xlink:href="../assets/img/sprite.svg#arrow"></use>
+                    <use xlink:href="../assets/img/sprite.svg#arrow" />
                   </svg>
                 </a>
                 <ul class="collapse-link__block">
@@ -39,24 +39,35 @@
               <div class="header__link">
                 <nav>
                   <ul class="header__link-items">
-                    <router-link 
-                      v-for="(item,index) in getMenuHeader" :key="index"
+                    <router-link
+                      v-for="(item,index) in getMenuHeader"
+                      :key="index"
                       tag="li"
                       class="header__link-item"
                       activeClass="active"
                       :class="{'collapse-link': item.sub.length}"
-                      :to = item.link
+                      :to="item.link"
                     >
                       <a href="#" class="main-link">
                         {{item.name}}
-                      <svg v-show="item.sub.length" class="icon-svg icon-svg-arrow collapse-arrow"><use xlink:href="../assets/img/sprite.svg#arrow"></use></svg>
+                        <svg
+                          v-show="item.sub.length"
+                          class="icon-svg icon-svg-arrow collapse-arrow"
+                        >
+                          <use xlink:href="../assets/img/sprite.svg#arrow" />
+                        </svg>
                       </a>
                       <div class="collapse-link__block fontsize" v-show="item.sub.length">
-                          <ul>
-                            <router-link v-for="(subItem,index) in item.sub" :key="index" tag="li" :to= "item.link + '/' + subItem.name">
-                                  <a href="#">{{subItem.name}}</a>
-                            </router-link>
-                          </ul>
+                        <ul>
+                          <router-link
+                            v-for="(subItem,index) in item.sub"
+                            :key="index"
+                            tag="li"
+                            :to="item.link + '/' + subItem.linkName"
+                          >
+                            <a href="#">{{subItem.name}}</a>
+                          </router-link>
+                        </ul>
                       </div>
                     </router-link>
                   </ul>
@@ -67,22 +78,18 @@
                   class="button button_green"
                   data-toggle="modal"
                   data-target="#callback"
-                >
-                  Заказать звонок
-                </button>
+                >Заказать звонок</button>
               </div>
             </div>
           </div>
           <div class="header__auth">
             <div class="collapse-link" v-if="!isUser">
-              <router-link 
-              tag="li"
-              to="#">
-              <a href="#">
-                <svg class="icon-svg icon-svg-login header__auth-image">
-                  <use xlink:href="../assets/img/sprite.svg#login"></use>
-                </svg>
-              </a>
+              <router-link tag="li" to="#">
+                <a href="#">
+                  <svg class="icon-svg icon-svg-login header__auth-image">
+                    <use xlink:href="../assets/img/sprite.svg#login" />
+                  </svg>
+                </a>
               </router-link>
               <div class="collapse-link__block fontsize width">
                 <ul>
@@ -99,17 +106,17 @@
               <a href="#">
                 <!-- <img src="img/user.png" alt="" class="header__auth-image"> -->
                 <svg class="icon-svg icon-svg-user-svg header__auth-image">
-                  <use xlink:href="../assets/img/sprite.svg#user-svg"></use>
+                  <use xlink:href="../assets/img/sprite.svg#user-svg" />
                 </svg>
               </a>
               <div class="collapse-link__block fontsize width">
                 <ul>
                   <router-link tag="li" to="/profile">
-                       <a href="#">Профиль</a>
+                    <a href="#">Профиль</a>
                   </router-link>
                   <!-- <li>
                     <a href="#">Профиль</a>
-                  </li> -->
+                  </li>-->
                   <li>
                     <a href="#" @click="logOut">Выйти</a>
                   </li>
@@ -119,22 +126,22 @@
             <a href="#" class="search">
               <!-- <img src="img/search.png" alt="" class="header__auth-image"> -->
               <svg class="icon-svg icon-svg-search header__auth-image">
-                <use xlink:href="../assets/img/sprite.svg#search"></use>
+                <use xlink:href="../assets/img/sprite.svg#search" />
               </svg>
             </a>
             <form action="#">
               <div class="search-content">
                 <div class="search-content__input">
                   <button type="submit" class="search-link">
-                    <img src="../assets/img/search.png" alt="" />
+                    <img src="../assets/img/search.png" alt />
                   </button>
                   <button type="reset" class="reset-search">
                     <svg class="icon-svg icon-svg-left-arrow button__menu_mail">
-                      <use xlink:href="img/sprite.svg#left-arrow"></use>
+                      <use xlink:href="img/sprite.svg#left-arrow" />
                     </svg>
                   </button>
                   <a href="#" class="close-search">
-                    <img src="../assets/img/close.png" alt="" />
+                    <img src="../assets/img/close.png" alt />
                   </a>
                   <input type="text" placeholder="Что вы ищите?" />
                 </div>
@@ -147,27 +154,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -184,7 +191,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -198,27 +205,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -235,7 +242,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -249,27 +256,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -286,7 +293,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -300,27 +307,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -337,7 +344,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -351,27 +358,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -388,7 +395,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -402,27 +409,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -439,7 +446,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -453,27 +460,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -490,7 +497,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -504,27 +511,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -541,7 +548,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -555,27 +562,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -592,7 +599,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -606,27 +613,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -643,7 +650,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -657,27 +664,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -694,7 +701,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -708,27 +715,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -745,7 +752,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -759,27 +766,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -796,7 +803,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -810,27 +817,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -847,7 +854,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -861,27 +868,27 @@
                       <div class="card__info-rating rating-star">
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                         <a href="#" class="star-rating">
                           <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star"></use>
+                            <use xlink:href="img/sprite.svg#star" />
                           </svg>
                         </a>
                       </div>
@@ -898,7 +905,7 @@
                     <div class="card__btn card__btn_slider">
                       <a href="#" class="button button_search">
                         <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket"></use>
+                          <use xlink:href="img/sprite.svg#basket" />
                         </svg>
                         <span>Купить товар</span>
                       </a>
@@ -909,7 +916,7 @@
             </form>
             <a href="#" class="header__auth-basket">
               <svg class="icon-svg icon-svg-basket-svg header__auth-image">
-                <use xlink:href="../assets/img/sprite.svg#basket-svg"></use>
+                <use xlink:href="../assets/img/sprite.svg#basket-svg" />
               </svg>
               <span>12</span>
             </a>
@@ -921,34 +928,31 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex"
+import { mapGetters } from "vuex";
 export default {
   components: {},
   data() {
     return {
       isOpen: false,
       menu: [],
-      isUser:JSON.parse(localStorage.getItem("userId")),
-      out:false
-
+      isUser: JSON.parse(localStorage.getItem("userId")),
+      out: false
     };
   },
   methods: {
     // ...mapMutations(['getMenuItem'])
-    logOut:function() {
-      localStorage.removeItem("userId")
+    logOut: function() {
+      localStorage.removeItem("userId");
       // this.out = true
-      this.$router.push('/enter')
-      console.log(localStorage)
+      this.$router.push("/enter");
+      console.log(localStorage);
     }
   },
   computed: {
-    ...mapGetters(['getMenuHeader'])
-    },
+    ...mapGetters(["getMenuHeader"])
+  },
   mounted() {
-    this.$store.dispatch('getMenuAction')
-
-
+    this.$store.dispatch("getMenuAction");
   }
 };
 </script>

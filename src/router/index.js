@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/',
     name: 'Главная',
-    component: Home
+    component: Home,
   },
   {
     path: '/registration',
