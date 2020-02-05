@@ -354,13 +354,21 @@
                   </a>
                 </div>-->
                 <!-- <input type="text" class="dropdown__btn" /> -->
-                <select v-model="filter" class="dropdown__btn">
+                <!-- <select v-model="filter" class="dropdown__btn">
                   <option
                     class="dropdown-item"
                     v-for="(item,index) in filterList"
                     :key="index"
                   >{{item}}</option>
-                </select>
+                </select> -->
+                <!-- <b-dropdown id="dropdown-1" text="Сортировать..." class="dropdown__btn">
+                  <b-dropdown-item v-for="(item,index) in filterList" :key="index">{{item}}</b-dropdown-item>
+                </b-dropdown>-->
+              <v-select 
+              v-model="filter" 
+              :options="filterList"
+              class="filterDropdown"
+              ></v-select>
               </div>
             </div>
           </div>
@@ -399,7 +407,7 @@ export default {
     return {
       //   id: this.$route.params.id
       filterList: ["От A-Z", "От Z-A", "По возростанию", "По спаданию"],
-      filter: "От A-Z"
+      filter: "Сортировать..."
     };
   },
   components: {
@@ -457,4 +465,76 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" >
+.dropdown {
+    width: 211px;
+    height: 34px;
+};
+  .filterDropdown {
+    // .vs__dropdown-toggle {
+    //   border: 1px solid #b8adab;
+    //   border-radius: 15px;
+    //   font-size: 15px;
+    //   padding: 5px 25px;
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    // }
+    height: 100%;
+    .vs {
+      &__dropdown {
+        &-toggle {
+          cursor:pointer;
+          border: 1px solid #b8adab;
+          border-radius: 15px;
+          font-size: 15px;
+          padding: 5px 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+        }
+        &-menu {
+          border-radius:15px;
+          padding:15px 15px;
+          top:35px;
+          box-shadow:none;
+          border-top-style:solid;
+        }
+        &-option {
+          font-size:15px;
+          font-family:'Helvetica-Regular';
+          padding:0;
+          margin-bottom:15px;
+          &--highlight {
+            background:none;
+            color:#B1C962;
+            transition:.3s;
+          }
+        }
+      }
+      &__selected {
+        font-size:15px;
+        margin:0;
+        &-options {
+          flex-wrap:nowrap;
+        }
+      }
+      &__clear {
+        display:none;
+      }
+      &__search {
+          pointer-events: none;
+        &:focus {
+          font-size:15px;
+        }
+      }
+      &__open {
+        &-indicator {
+          // width:11px;
+          // height:5px;
+        }
+      }
+    }
+  }
+</style>

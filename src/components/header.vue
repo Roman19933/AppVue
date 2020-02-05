@@ -74,11 +74,7 @@
                 </nav>
               </div>
               <div class="header__callback">
-                <button
-                  class="button button_green"
-                  data-toggle="modal"
-                  data-target="#callback"
-                >Заказать звонок</button>
+                <Button class="button button_green" value ="Заказать звонок" v-b-modal.callback/>
               </div>
             </div>
           </div>
@@ -123,13 +119,13 @@
                 </ul>
               </div>
             </div>
-            <a href="#" class="search">
+            <a href="#" class="search" @click="showSearch = true">
               <!-- <img src="img/search.png" alt="" class="header__auth-image"> -->
               <svg class="icon-svg icon-svg-search header__auth-image">
                 <use xlink:href="../assets/img/sprite.svg#search" />
               </svg>
             </a>
-            <form action="#">
+            <form action="#" v-if="showSearch">
               <div class="search-content">
                 <div class="search-content__input">
                   <button type="submit" class="search-link">
@@ -140,778 +136,270 @@
                       <use xlink:href="img/sprite.svg#left-arrow" />
                     </svg>
                   </button>
-                  <a href="#" class="close-search">
+                  <a href="#" class="close-search" @click="showSearch= false">
                     <img src="../assets/img/close.png" alt />
                   </a>
                   <input type="text" placeholder="Что вы ищите?" />
                 </div>
-                <div class="search-content__product">
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
+                <vue-nice-scrollbar classes="my-scrollbar" v-bind:speed=100 theme="light">
+                  <div class="search-content__product">
+                    <div class="card">
+                      <div class="card__title">
+                        <a href="#">Торф Огородник® верховой 9л.</a>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__info-rating rating-star">
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="card__info-price">
+                          <span>213,13 грн.</span>
+                        </div>
+                      </div>
+                      <div class="card__describe card__describe_search">
+                        <p>
+                          Предназначено для выращивания рассады и
+                          цветочно-декоративных культур.
+                        </p>
+                      </div>
+                      <div class="card__btn card__btn_slider">
+                        <a href="#" class="button button_search">
+                          <svg class="icon-svg icon-svg-basket basket">
+                            <use xlink:href="img/sprite.svg#basket" />
                           </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
+                          <span>Купить товар</span>
                         </a>
                       </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
+                    </div>
+                    <div class="card">
+                      <div class="card__title">
+                        <a href="#">Торф Огородник® верховой 9л.</a>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__info-rating rating-star">
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="card__info-price">
+                          <span>213,13 грн.</span>
+                        </div>
+                      </div>
+                      <div class="card__describe card__describe_search">
+                        <p>
+                          Предназначено для выращивания рассады и
+                          цветочно-декоративных культур.
+                        </p>
+                      </div>
+                      <div class="card__btn card__btn_slider">
+                        <a href="#" class="button button_search">
+                          <svg class="icon-svg icon-svg-basket basket">
+                            <use xlink:href="img/sprite.svg#basket" />
+                          </svg>
+                          <span>Купить товар</span>
+                        </a>
                       </div>
                     </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
+                    <div class="card">
+                      <div class="card__title">
+                        <a href="#">Торф Огородник® верховой 9л.</a>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__info-rating rating-star">
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="card__info-price">
+                          <span>213,13 грн.</span>
+                        </div>
+                      </div>
+                      <div class="card__describe card__describe_search">
+                        <p>
+                          Предназначено для выращивания рассады и
+                          цветочно-декоративных культур.
+                        </p>
+                      </div>
+                      <div class="card__btn card__btn_slider">
+                        <a href="#" class="button button_search">
+                          <svg class="icon-svg icon-svg-basket basket">
+                            <use xlink:href="img/sprite.svg#basket" />
+                          </svg>
+                          <span>Купить товар</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
+                    <div class="card">
+                      <div class="card__title">
+                        <a href="#">Торф Огородник® верховой 9л.</a>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__info-rating rating-star">
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="card__info-price">
+                          <span>213,13 грн.</span>
+                        </div>
+                      </div>
+                      <div class="card__describe card__describe_search">
+                        <p>
+                          Предназначено для выращивания рассады и
+                          цветочно-декоративных культур.
+                        </p>
+                      </div>
+                      <div class="card__btn card__btn_slider">
+                        <a href="#" class="button button_search">
+                          <svg class="icon-svg icon-svg-basket basket">
+                            <use xlink:href="img/sprite.svg#basket" />
+                          </svg>
+                          <span>Купить товар</span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card__title">
+                        <a href="#">Торф Огородник® верховой 9л.</a>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__info-rating rating-star">
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                          <a href="#" class="star-rating">
+                            <svg class="icon-svg icon-svg-star star">
+                              <use xlink:href="img/sprite.svg#star" />
+                            </svg>
+                          </a>
+                        </div>
+                        <div class="card__info-price">
+                          <span>213,13 грн.</span>
+                        </div>
+                      </div>
+                      <div class="card__describe card__describe_search">
+                        <p>
+                          Предназначено для выращивания рассады и
+                          цветочно-декоративных культур.
+                        </p>
+                      </div>
+                      <div class="card__btn card__btn_slider">
+                        <a href="#" class="button button_search">
+                          <svg class="icon-svg icon-svg-basket basket">
+                            <use xlink:href="img/sprite.svg#basket" />
+                          </svg>
+                          <span>Купить товар</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card__title">
-                      <a href="#">Торф Огородник® верховой 9л.</a>
-                    </div>
-                    <div class="card__info">
-                      <div class="card__info-rating rating-star">
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                        <a href="#" class="star-rating">
-                          <svg class="icon-svg icon-svg-star star">
-                            <use xlink:href="img/sprite.svg#star" />
-                          </svg>
-                        </a>
-                      </div>
-                      <div class="card__info-price">
-                        <span>213,13 грн.</span>
-                      </div>
-                    </div>
-                    <div class="card__describe card__describe_search">
-                      <p>
-                        Предназначено для выращивания рассады и
-                        цветочно-декоративных культур.
-                      </p>
-                    </div>
-                    <div class="card__btn card__btn_slider">
-                      <a href="#" class="button button_search">
-                        <svg class="icon-svg icon-svg-basket basket">
-                          <use xlink:href="img/sprite.svg#basket" />
-                        </svg>
-                        <span>Купить товар</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                </vue-nice-scrollbar>
               </div>
             </form>
             <a href="#" class="header__auth-basket">
@@ -924,26 +412,34 @@
         </div>
       </div>
     </header>
+    <callbackModal />
+    <Thank />
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Button from "../components/loyauts/button/button"
+import callbackModal from "../components/modals/callback"
+import Thank from "../components/modals/thank"
 export default {
-  components: {},
   data() {
     return {
       isOpen: false,
       menu: [],
       isUser: JSON.parse(localStorage.getItem("userId")),
-      out: false
+      out: false,
+      showSearch:false
     };
   },
+  components: {
+    Button,
+    callbackModal,
+    Thank
+  },
   methods: {
-    // ...mapMutations(['getMenuItem'])
     logOut: function() {
       localStorage.removeItem("userId");
-      // this.out = true
       this.$router.push("/enter");
       console.log(localStorage);
     }
@@ -957,7 +453,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@media (max-width: 767px) {
+<style lang="scss">
+.my-scrollbar {
+// width:100%;
+  // min-width: 300px;
+  min-height: 862px;
 }
 </style>

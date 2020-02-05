@@ -1,3 +1,6 @@
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../../../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+@import "../../../node_modules/vue-select/dist/vue-select.css";
 .icon-french {
   background-image: url(/assets/img/icons.png);
   background-position: 0px 0px;
@@ -1195,8 +1198,8 @@ body {
               align-items: center;
       -webkit-box-pack: center;
               justify-content: center;
-      visibility: hidden;
-      opacity: 0;
+      /* visibility: hidden;
+      opacity: 0; */
       -webkit-transition: .3s;
       transition: .3s;
       -webkit-box-orient: vertical;
@@ -1256,8 +1259,8 @@ body {
                 justify-content: space-between;
         flex-wrap: wrap;
         margin-top: 47px;
-        height: 815px;
-        overflow: auto;
+        /* height: 815px;
+        overflow: auto; */
         padding: 45px 103px;
         position: relative;
         -webkit-box-align: start;

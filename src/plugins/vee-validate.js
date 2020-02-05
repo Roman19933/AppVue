@@ -11,3 +11,4 @@ Object.keys(rules).forEach(rule => {
     message: messages[rule] // assign message
   });
 });
+export default {ValidationProvider,ValidationObserver}
