@@ -4,6 +4,7 @@ import headerMenu from "./modules/headerMenu"
 import registration from "./modules/registration"
 import categories from "./modules/categories"
 import product from "./modules/product"
+import basket from "./modules/basket"
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
         headerMenu,
         registration,
         categories,
-        product
+        product,
+        basket
     }
 })

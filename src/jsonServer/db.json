@@ -160,14 +160,14 @@
       "categoryLink": "category-1",
       "oldPrice": 65,
       "newPrice": 23,
-      "discount": false,
+      "discount": true,
       "isProduct": false,
       "timer": false,
       "isMain": false,
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 2,
       "article": 24224,
       "name": "Огурец",
       "image": "cat-1.png",
@@ -176,14 +176,14 @@
       "categoryLink": "category-1",
       "oldPrice": 78,
       "newPrice": 44,
-      "discount": false,
+      "discount": true,
       "isProduct": false,
       "timer": false,
       "isMain": false,
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 3,
       "article": 24224,
       "name": "Груша",
       "image": "cat-1.png",
@@ -192,14 +192,14 @@
       "categoryLink": "category-1",
       "oldPrice": 78,
       "newPrice": 14,
-      "discount": false,
+      "discount": true,
       "isProduct": false,
       "timer": false,
       "isMain": false,
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 4,
       "article": 24224,
       "name": "Огурец",
       "image": "cat-1.png",
@@ -215,7 +215,7 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 5,
       "article": 24224,
       "name": "Ананас",
       "image": "cat-1.png",
@@ -231,7 +231,7 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 6,
       "article": 24224,
       "name": "Яблуко",
       "image": "cat-1.png",
@@ -247,7 +247,7 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 7,
       "article": 24224,
       "name": "Кабачок",
       "image": "cat-1.png",
@@ -263,7 +263,23 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 14,
+      "article": 24224,
+      "name": "Гуава",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Категория5",
+      "categoryLink": "category-5",
+      "oldPrice": 24,
+      "newPrice": 5,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 8,
       "article": 24224,
       "name": "Дынька",
       "image": "cat-1.png",
@@ -279,7 +295,7 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 9,
       "article": 24224,
       "name": "Перчик",
       "image": "cat-1.png",
@@ -295,7 +311,7 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 10,
       "article": 24224,
       "name": "Лавровый лист",
       "image": "cat-1.png",
@@ -311,7 +327,23 @@
       "isRecomended": false
     },
     {
-      "id": 1,
+      "id": 11,
+      "article": 2321,
+      "name": "Манго",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Категория3",
+      "categoryLink": "category-3",
+      "oldPrice": 55,
+      "newPrice": 11,
+      "discount": true,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 12,
       "article": 24224,
       "name": "Бурячок",
       "image": "cat-1.png",
@@ -327,7 +359,7 @@
       "isRecomended": false
     },
     {
-      "id": 2,
+      "id": 13,
       "article": 32323,
       "name": "Картопля",
       "image": "cat-1.png",
@@ -336,6 +368,22 @@
       "categoryLink": "category-1",
       "oldPrice": 333,
       "newPrice": 55,
+      "discount": false,
+      "isProduct": false,
+      "timer": false,
+      "isMain": false,
+      "isRecomended": false
+    },
+    {
+      "id": 15,
+      "article": 32323,
+      "name": "Мандаринчик",
+      "image": "cat-1.png",
+      "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
+      "category": "Категория4",
+      "categoryLink": "category-4",
+      "oldPrice": 5,
+      "newPrice": 1,
       "discount": false,
       "isProduct": false,
       "timer": false,

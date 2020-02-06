@@ -1,7 +1,10 @@
 <template>
   <div class="card">
     <div class="card__title">
-      <a href="#">{{product.name}}</a>
+      <router-link tag="a" :to="{name:'Страница продукта', params:{id:product.id,name:product.name},query: {id:product.id}}">
+          {{product.name}}
+      </router-link>
+      <!-- <a href="#">{{product.name}}</a> -->
     </div>
     <div class="card__info" v-if="!product.discount">
       <div class="card__info-rating rating-star">
@@ -52,7 +55,7 @@
       <p>{{product.describe}}</p>
     </div>
     <div class="card__btn card__btn_slider">
-      <a href="#" class="button">
+      <a href="#" class="button" @click="buyProduct">
         <svg class="icon-svg icon-svg-basket basket">
           <use xlink:href="../../../assets/img/sprite.svg#basket" />
         </svg>
@@ -63,6 +66,7 @@
 </template>
 
 <script>
+import { mapGetters,mapActions} from "vuex";
 export default {
   props: {
     product: {
@@ -70,9 +74,22 @@ export default {
       default: null
     }
   },
-  mounted() {
-    console.log(this.product);
-  }
+  methods: {
+    buyProduct:function() {
+      if(this.addBasketProduct.includes(this.product)) {
+        this.product.quantity ++;
+      } else {
+        this.product["quantity"] = 1;
+        this.$store.dispatch("addBasketProductAction",this.product);
+      }
+    },
+    goPageToProduct:function() {
+      console.log(this.product.id)
+    }
+  },
+  computed: {
+    ...mapGetters(["addBasketProduct"])
+  },
 };
 </script>
 

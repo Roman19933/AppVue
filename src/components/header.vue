@@ -160,12 +160,12 @@
                 </div>
               </div>
             </form>
-            <a href="#" class="header__auth-basket">
-              <svg class="icon-svg icon-svg-basket-svg header__auth-image">
-                <use xlink:href="../assets/img/sprite.svg#basket-svg" />
-              </svg>
-              <span>12</span>
-            </a>
+            <router-link tag="a" to="/basket" class="header__auth-basket">
+                <svg class="icon-svg icon-svg-basket-svg header__auth-image">
+                  <use xlink:href="../assets/img/sprite.svg#basket-svg" />
+                </svg>
+                <span v-if="this.addBasketProduct.length">{{this.addBasketProduct.length}}</span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -209,7 +209,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getMenuHeader", "getProducts"]),
+    ...mapGetters(["getMenuHeader", "getProducts","addBasketProduct"]),
     filterProductToSearch: function() {
       return this.getProducts.filter(item => {
         return (
@@ -221,6 +221,7 @@ export default {
   mounted() {
     this.$store.dispatch("getMenuAction");
     this.$store.dispatch("getProductsAction");
+    // this.$store.dispatch("addBasketProductAction");
     console.log(this.filterProductToSearch);
   }
 };

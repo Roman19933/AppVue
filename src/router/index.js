@@ -6,6 +6,8 @@ import Enter from '../views/Enter.vue'
 import Profile from '../views/Profile.vue'
 import Catalog from '../views/Catalog.vue'
 import catalogItem from '../views/CatItem.vue'
+import Basket from '../views/Basket.vue'
+import Product from '../views/Product.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +16,11 @@ const routes = [
     path: '/',
     name: 'Главная',
     component: Home,
+  },
+  {
+    path: '/product',
+    name: 'Страница продукта',
+    component: Product,
   },
   {
     path: '/registration',
@@ -34,6 +41,11 @@ const routes = [
     path: '/catalog',
     name: 'Каталог',
     component: Catalog,
+  },
+  {
+    path: '/basket',
+    name: 'Корзина',
+    component: Basket,
   },
   {
     path: '/catalog/:id',
