@@ -2236,7 +2236,8 @@ body {
     color: #B1C962; }
     .product__title-status .status-view.not-stock {
       color: #EB5757;
-      display: none; }
+      /* display: none;  */
+    }
   .product__title-status.stock .status-view.not-stock {
     display: block; }
   .product__title-status.stock .status-view.in-stock {

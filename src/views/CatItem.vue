@@ -385,11 +385,6 @@
             практика показывает
           </p>
         </div>
-        <!-- <pre>{{this.getProducts}}</pre> -->
-        <!-- <pre>{{this.getCategories}}</pre>
-        <pre>{{this.getNameToCategory}}</pre>-->
-        <!-- <pre>{{this.getProductToCategory}}</pre> -->
-        <!-- <pre>{{this.getProductToCategory}}</pre> -->
       </div>
     </div>
   </div>
@@ -401,7 +396,6 @@ import cardProduct from "../components/loyauts/card/cardProduct";
 export default {
   data() {
     return {
-      //   id: this.$route.params.id
       filterList: ["От A-Z", "От Z-A", "По возростанию", "По спаданию"],
       filter: "Сортировать..."
     };
@@ -425,23 +419,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getProducts"]),
-    // getNameToCategory: function() {
-    //   return this.getCategories.filter(item => {
-    //     if (item.linkName === this.$route.params.id) {
-    //       return item;
-    //     }
-    //   });
-    // },
-    // filter: function() {
-    //   switch (this.filter) {
-    //     case "От A-Z":
-    //       this.getProductToCategory.sort((a, b) =>
-    //         a.name.localeCompare(b.name)
-    //       );
-    //       console.log("ok");
-    //   }
-    // },
+    ...mapGetters(["getProducts","addBasketProduct"]),
     getProductToCategory: function() {
       return this.getProducts.filter(item => {
         if (item.categoryLink == this.$route.params.id) {
@@ -452,9 +430,8 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getProductsAction");
-    // this.$store.dispatch("getCategoriesAction");
-    // this.$store.dispatch("getProductToCategoryAction", this.get[0].name);
-    // console.log(this.getNameToCategory[0].name);
+    console.log(this.addBasketProduct)
+    console.log(this.getProductToCategory)
   },
   methods: {}
 };

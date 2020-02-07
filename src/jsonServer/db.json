@@ -164,7 +164,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":0
     },
     {
       "id": 2,
@@ -180,7 +182,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":7
     },
     {
       "id": 3,
@@ -196,7 +200,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":2
     },
     {
       "id": 4,
@@ -212,7 +218,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":1
     },
     {
       "id": 5,
@@ -228,7 +236,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":58
     },
     {
       "id": 6,
@@ -244,8 +254,10 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
-    },
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
+        },
     {
       "id": 7,
       "article": 24224,
@@ -260,7 +272,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":3
     },
     {
       "id": 14,
@@ -276,7 +290,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":15
     },
     {
       "id": 8,
@@ -292,7 +308,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
     },
     {
       "id": 9,
@@ -308,7 +326,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":7
     },
     {
       "id": 10,
@@ -324,7 +344,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
     },
     {
       "id": 11,
@@ -340,7 +362,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
     },
     {
       "id": 12,
@@ -356,7 +380,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
     },
     {
       "id": 13,
@@ -372,7 +398,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
     },
     {
       "id": 15,
@@ -388,7 +416,9 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false
+      "isRecomended": false,
+      "quantity":null,
+      "count":5
     }
   ]
 }

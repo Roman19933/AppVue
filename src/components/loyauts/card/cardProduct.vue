@@ -55,12 +55,13 @@
       <p>{{product.describe}}</p>
     </div>
     <div class="card__btn card__btn_slider">
-      <a href="#" class="button" @click="buyProduct">
+      <a href="#" class="button" @click.prevent="buyProduct" v-if="product.count !== 0">
         <svg class="icon-svg icon-svg-basket basket">
           <use xlink:href="../../../assets/img/sprite.svg#basket" />
         </svg>
         <span>Купить товар</span>
       </a>
+      <span v-else>Товара нет в наличии=)</span>
     </div>
   </div>
 </template>
@@ -78,10 +79,14 @@ export default {
     buyProduct:function() {
       if(this.addBasketProduct.includes(this.product)) {
         this.product.quantity ++;
+        console.log('true')
       } else {
-        this.product["quantity"] = 1;
+        this.product.quantity = 1;
         this.$store.dispatch("addBasketProductAction",this.product);
+        console.log('false')
+
       }
+      this.product.count --
     },
     goPageToProduct:function() {
       console.log(this.product.id)
@@ -90,6 +95,9 @@ export default {
   computed: {
     ...mapGetters(["addBasketProduct"])
   },
+  mounted() {
+    console.log(this.addBasketProduct.includes(this.product))
+  }
 };
 </script>
 

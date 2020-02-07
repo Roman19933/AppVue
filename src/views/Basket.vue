@@ -18,26 +18,28 @@
         </div>
         <form action="#">
           <div class="basket__items" v-if="this.addBasketProduct.length">
-            <div class="basket__item" v-for="(item,index) in this.addBasketProduct" :key="index">
+            <div class="basket__item" v-for="(item,index) in addBasketProduct" :key="index">
               <div class="basket__item-left">
                 <img src="../assets/img/basket-img.png" alt="" />
                 <div class="basket__item-left__wrapper">
                   <div class="basket__item-title">
                     <div class="basket__item_title">
-                      <a href="#">{{item.name}}</a>
+                       <router-link tag="a" :to="{name:'Страница продукта', params:{id:item.id,name:item.name},query: {id:item.id}}">
+                            {{item.name}}
+                        </router-link>
                       <span>#{{item.article}}</span>
                     </div>
                   </div>
                   <div class="product__count basket__item-count">
                     <div class="count">
-                      <a href="#" class="count__minus preventDefault">
+                      <a href="#" class="count__minus preventDefault"   @click.prevent="item.quantity !== 0 ? minusCount(item) : disabled">
                         <svg class="icon-svg icon-svg-minus minus">
                           <use xlink:href="../assets/img/sprite.svg#minus"></use>
                         </svg>
                         <!-- <img src="img/minus.png" alt=""> -->
                       </a>
-                      <input type="text" v-model="item.quantity" class="count__input" />
-                      <a href="#" class="count__plus preventDefault">
+                      <input type="text" v-model="item.quantity" class="count__input" :disabled="item.count ==0" />
+                      <a href="#" class="count__plus preventDefault"  @click.prevent="item.count !== 0 ? plusCount(item) : disabled">
                         <svg class="icon-svg icon-svg-plus plus">
                           <use xlink:href="../assets/img/sprite.svg#plus"></use>
                         </svg>
@@ -470,12 +472,24 @@ export default {
         }
     },
     mounted(){
+      this.getPriceProduct,
+      this.getTotalSum,
+      this.addBasketProduct
+
         console.log(this.getPriceProduct)
         console.log(this.getTotalSum)
     },
     methods: {
         deleteProduct: function(index){
             this.addBasketProduct.splice(index,1)
+        },
+        plusCount: function(item) {
+          item.quantity ++,
+          item.count --
+        },
+        minusCount: function(item) {
+          item.quantity --,
+          item.count ++
         }
     }
    
