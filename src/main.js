@@ -10,12 +10,13 @@ import VeeValidate from "./plugins/vee-validate"
 import VueSelect from "./plugins/vue-select"
 import NiceScroll from "./plugins/niceScroll"
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import StarRating from 'vue-star-rating'
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 Vue.use(VueAxios,axios)
 Vue.use(VueInputMask)
-
+Vue.component('StarRating',StarRating)
 
 Vue.config.productionTip = false
 

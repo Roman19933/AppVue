@@ -94,22 +94,20 @@
             </div>
           </div>
           <div class="product__count">
-            <span class="text">Количество шт.:</span>
-            <div class="count">
+            <!-- <span class="text">Количество шт.:</span> -->
+            <!-- <div class="count">
               <a href="#" class="count__minus preventDefault">
                 <svg class="icon-svg icon-svg-minus minus">
-                  <use xlink:href="img/sprite.svg#minus"></use>
+                  <use xlink:href="../assets/img/sprite.svg#minus"></use>
                 </svg>
-                <!-- <img src="img/minus.png" alt=""> -->
               </a>
               <input type="text" v-model="item.quantity" class="count__input" />
               <a href="#" class="count__plus preventDefault">
                 <svg class="icon-svg icon-svg-plus plus">
-                  <use xlink:href="img/sprite.svg#plus"></use>
+                  <use xlink:href="../assets/img/sprite.svg#plus"></use>
                 </svg>
-                <!-- <img src="img/.png" alt=""> -->
               </a>
-            </div>
+            </div> -->
           </div>
           <div class="product__count">
             <div class="product__count-timer">
@@ -118,7 +116,7 @@
             </div>
           </div>
           <div class="product__button">
-            <Button class="button button_green" value="Купить в один клик" />
+            <Button class="button button_green" value="Купить в один клик" v-b-modal.oneClick />
             <!-- <Button class="button" value="Добавить в корзину" @click="buyProductToCard"/> -->
             <!-- <button
               class="button button_green"
@@ -134,7 +132,8 @@
         </div>
       </div>
       <div class="product__tabs">
-        <nav>
+        <Tab />
+        <!-- <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a
               class="nav-item nav-link active"
@@ -283,7 +282,6 @@
             </div>
             <div class="home__feedback home__feedback_product">
               <div class="home__slider home__slider-feedback">
-                <!-- Swiper -->
                 <div class="swiper-container slider-feedback">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -412,7 +410,7 @@
               <div class="swiper-pagination swiper-pagination__feedback"></div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="product__recomended">
         <div class="title title_product">
@@ -491,12 +489,14 @@
 <script>
 import { mapGetters } from "vuex";
 import Button from "../components/loyauts/button/button";
+import Tab from "../components/loyauts/tab/productTab";
 export default {
   computed: {
     ...mapGetters(["getProducts", "getProduct", "addBasketProduct"])
   },
   components: {
-    Button
+    Button,
+    Tab
   },
   methods: {
     getProductToId: function() {
@@ -507,7 +507,6 @@ export default {
       });
     },
     buyProductToCard: function() {
-
         this.addBasketProduct.some(item => {
             if(item.id === this.getProduct[0].id) {
                 item.quantity++;
@@ -516,31 +515,13 @@ export default {
                 this.$store.dispatch("addBasketProductAction", item);
             }
         })
-        // this.getProduct[0].quantity = 1;
-        // this.$store.dispatch("addBasketProductAction", this.getProduct[0]);
       }
-      // if(this.addBasketProduct.some(item => item.id === this.getProduct[0].id)) {
-      //     this.getProduct[0].quantity ++;
-      //     console.log('true')
-      // } else {
-      //     console.log('false')
-
-      //     this.getProduct[0].quantity = 1;
-      //     this.$store.dispatch("addBasketProductAction",this.getProduct[0]);
-
-      // }
-    // }
   },
   mounted() {
     this.$store.dispatch("getProductsAction");
     this.$store.dispatch("getProductAction", this.getProductToId());
-    // this.$store.dispatch("addBasketProductAction",this.getProduct[0]);
 
     this.getProductToId();
-    // this.buyProductToCard()
-    // console.log(this.getProduct[0]);
-    // console.log(this.addBasketProduct);
-    // console.log(this.addBasketProduct.includes(this.getProduct[0]));
   }
 };
 </script>

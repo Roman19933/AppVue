@@ -2331,7 +2331,7 @@ body {
   margin-bottom: 77px; }
   .product__tabs .nav {
     flex-wrap: initial; }
-    .product__tabs .nav-item {
+    .product__tabs .nav-link {
       width: 100%;
       text-align: center;
       border: none;
@@ -2340,7 +2340,7 @@ body {
       transition: .3s;
       color: #BABABA;
       font-size: 22px; }
-      .product__tabs .nav-item.active, .product__tabs .nav-item:hover {
+      .product__tabs .nav-link.active, .product__tabs .nav-link:hover {
         color: #454545;
         border-bottom: 3px solid #B1C962; }
   .product__tabs .tab-content {

@@ -172,6 +172,7 @@
     </header>
     <callbackModal />
     <Thank />
+    <OneClick />
   </div>
 </template>
 
@@ -180,6 +181,7 @@ import { mapGetters } from "vuex";
 import Button from "../components/loyauts/button/button";
 import callbackModal from "../components/modals/callback";
 import Thank from "../components/modals/thank";
+import OneClick from "../components/modals/buyOneClick";
 import cardProduct from "../components/loyauts/card/cardProduct";
 export default {
   data() {
@@ -196,7 +198,8 @@ export default {
     Button,
     callbackModal,
     Thank,
-    cardProduct
+    cardProduct,
+    OneClick
   },
   methods: {
     logOut: function() {

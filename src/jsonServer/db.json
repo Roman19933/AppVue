@@ -165,26 +165,26 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":0
+      "quantity": null,
+      "count": 0
     },
     {
       "id": 2,
       "article": 24224,
-      "name": "Огурец",
+      "name": "Киви",
       "image": "cat-1.png",
       "describe": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quis eum totam quae commodi ipsam.",
       "category": "Категория1",
       "categoryLink": "category-1",
       "oldPrice": 78,
-      "newPrice": 44,
+      "newPrice": 14,
       "discount": true,
       "isProduct": false,
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":7
+      "quantity": null,
+      "count": 2
     },
     {
       "id": 3,
@@ -201,8 +201,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":2
+      "quantity": null,
+      "count": 2
     },
     {
       "id": 4,
@@ -219,8 +219,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":1
+      "quantity": null,
+      "count": 1
     },
     {
       "id": 5,
@@ -237,8 +237,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":58
+      "quantity": null,
+      "count": 58
     },
     {
       "id": 6,
@@ -255,9 +255,9 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
-        },
+      "quantity": null,
+      "count": 5
+    },
     {
       "id": 7,
       "article": 24224,
@@ -273,8 +273,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":3
+      "quantity": null,
+      "count": 3
     },
     {
       "id": 14,
@@ -291,8 +291,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":15
+      "quantity": null,
+      "count": 15
     },
     {
       "id": 8,
@@ -309,8 +309,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
+      "quantity": null,
+      "count": 5
     },
     {
       "id": 9,
@@ -327,8 +327,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":7
+      "quantity": null,
+      "count": 7
     },
     {
       "id": 10,
@@ -345,8 +345,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
+      "quantity": null,
+      "count": 5
     },
     {
       "id": 11,
@@ -363,8 +363,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
+      "quantity": null,
+      "count": 5
     },
     {
       "id": 12,
@@ -381,8 +381,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
+      "quantity": null,
+      "count": 5
     },
     {
       "id": 13,
@@ -399,8 +399,8 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
+      "quantity": null,
+      "count": 5
     },
     {
       "id": 15,
@@ -417,8 +417,18 @@
       "timer": false,
       "isMain": false,
       "isRecomended": false,
-      "quantity":null,
-      "count":5
+      "quantity": null,
+      "count": 5
+    }
+  ],
+  "feedbacks": [
+    {
+      "productId": "3",
+      "date": "10 февраля 2020 г.",
+      "text": "WDQDASD",
+      "rating": 5,
+      "name": "Саша Белийqasdasd",
+      "id": 1
     }
   ]
 }
