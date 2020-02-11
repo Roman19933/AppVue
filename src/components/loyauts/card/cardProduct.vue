@@ -8,29 +8,14 @@
     </div>
     <div class="card__info" v-if="!product.discount">
       <div class="card__info-rating rating-star">
-        <a href="#" class="star-rating">
-          <svg class="icon-svg icon-svg-star star">
-            <use xlink:href="../../../assets/img/sprite.svg#star" />
+        <a href="#" class="active" v-for="(item,index) in getEndRating()" :key="index + 1">
+          <svg class="icon-svg icon-svg-star rating">
+            <use xlink:href="../../../assets/img/sprite.svg#star"></use>
           </svg>
         </a>
-        <a href="#" class="star-rating">
-          <svg class="icon-svg icon-svg-star star">
-            <use xlink:href="../../../assets/img/sprite.svg#star" />
-          </svg>
-        </a>
-        <a href="#" class="star-rating">
-          <svg class="icon-svg icon-svg-star star">
-            <use xlink:href="../../../assets/img/sprite.svg#star" />
-          </svg>
-        </a>
-        <a href="#" class="star-rating">
-          <svg class="icon-svg icon-svg-star star">
-            <use xlink:href="../../../assets/img/sprite.svg#star" />
-          </svg>
-        </a>
-        <a href="#" class="star-rating">
-          <svg class="icon-svg icon-svg-star star">
-            <use xlink:href="../../../assets/img/sprite.svg#star" />
+        <a href="#" v-for="(item,index) in 5 - getEndRating()" :key="index">
+          <svg class="icon-svg icon-svg-star rating">
+            <use xlink:href="../../../assets/img/sprite.svg#star"></use>
           </svg>
         </a>
       </div>
@@ -68,6 +53,7 @@
 
 <script>
 import { mapGetters,mapActions} from "vuex";
+import ratingMixins from "../../../mixins/rating.js"
 export default {
   props: {
     product: {
@@ -75,6 +61,7 @@ export default {
       default: null
     }
   },
+  mixins:[ratingMixins],
   methods: {
     buyProduct:function() {
       if(this.addBasketProduct.includes(this.product)) {
@@ -88,15 +75,20 @@ export default {
       }
       this.product.count --
     },
-    goPageToProduct:function() {
-      console.log(this.product.id)
-    }
+    getFeedbacks: function() {
+      return this.getFeedback.filter(item => {
+        if (item.productId === this.product.id) {
+          return item;
+        }
+      });
+    },
   },
   computed: {
-    ...mapGetters(["addBasketProduct"])
+    ...mapGetters(["addBasketProduct","getFeedback"]),
   },
   mounted() {
-    console.log(this.addBasketProduct.includes(this.product))
+    this.$store.dispatch("getFeedbacksAction")
+    console.log(this.getFeedback)
   }
 };
 </script>

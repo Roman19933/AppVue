@@ -26,33 +26,18 @@
           <div class="product__title">
             <div class="product__title-rating">
               <div class="star rating-star">
-                <a href="#" class="active">
+                <a href="#" class="active" v-for="(item,index) in getEndRating()" :key="index + 1">
                   <svg class="icon-svg icon-svg-star rating">
-                    <use xlink:href="img/sprite.svg#star"></use>
+                    <use xlink:href="../assets/img/sprite.svg#star"></use>
                   </svg>
                 </a>
-                <a href="#">
+                <a href="#" v-for="(item,index) in 5 - getEndRating()" :key="index">
                   <svg class="icon-svg icon-svg-star rating">
-                    <use xlink:href="img/sprite.svg#star"></use>
-                  </svg>
-                </a>
-                <a href="#">
-                  <svg class="icon-svg icon-svg-star rating">
-                    <use xlink:href="img/sprite.svg#star"></use>
-                  </svg>
-                </a>
-                <a href="#">
-                  <svg class="icon-svg icon-svg-star rating">
-                    <use xlink:href="img/sprite.svg#star"></use>
-                  </svg>
-                </a>
-                <a href="#">
-                  <svg class="icon-svg icon-svg-star rating">
-                    <use xlink:href="img/sprite.svg#star"></use>
+                    <use xlink:href="../assets/img/sprite.svg#star"></use>
                   </svg>
                 </a>
               </div>
-              <span>Оценили 48 человек</span>
+              <span>Оценили {{getFeedbacks().length}} человек</span>
             </div>
             <a href="#" class="product__title-name">{{ item.name }}</a>
             <p>Арт. {{ item.article }}</p>
@@ -116,7 +101,11 @@
             </div>
           </div>
           <div class="product__button">
-            <Button class="button button_green" value="Купить в один клик" v-b-modal.oneClick />
+            <Button
+              class="button button_green"
+              value="Купить в один клик"
+              v-b-modal.oneClick
+            />
             <!-- <Button class="button" value="Добавить в корзину" @click="buyProductToCard"/> -->
             <!-- <button
               class="button button_green"
@@ -490,13 +479,25 @@
 import { mapGetters } from "vuex";
 import Button from "../components/loyauts/button/button";
 import Tab from "../components/loyauts/tab/productTab";
+import ratingMixin from "../mixins/rating.js"
 export default {
-  computed: {
-    ...mapGetters(["getProducts", "getProduct", "addBasketProduct"])
-  },
+  mixins:[ratingMixin],
   components: {
     Button,
     Tab
+  },
+  computed: {
+    ...mapGetters([
+      "getProducts",
+      "getProduct",
+      "addBasketProduct",
+      "getFeedback"
+    ])
+    // getFeedbacks:function(){
+    //   this.getFeedback.filter(item => {
+    //     return item.productId === this.$route.query.id
+    //   })
+    // }
   },
   methods: {
     getProductToId: function() {
@@ -507,21 +508,73 @@ export default {
       });
     },
     buyProductToCard: function() {
-        this.addBasketProduct.some(item => {
-            if(item.id === this.getProduct[0].id) {
-                item.quantity++;
-            } else {
-                item.quantity = 1;
-                this.$store.dispatch("addBasketProductAction", item);
-            }
-        })
-      }
+      this.addBasketProduct.some(item => {
+        if (item.id === this.getProduct[0].id) {
+          item.quantity++;
+        } else {
+          item.quantity = 1;
+          this.$store.dispatch("addBasketProductAction", item);
+        }
+      });
+    },
+        getFeedbacks: function() {
+      return this.getFeedback.filter(item => {
+        if (item.productId === this.$route.query.id) {
+          return item;
+        }
+      });
+    },
+    // getFeedbacks: function() {
+    //   return this.getFeedback.filter(item => {
+    //     if (item.productId === this.$route.query.id) {
+    //       return item.rating;
+    //     }
+    //   });
+    // },
+    // getArrayRating:function(){
+    //   if(this.getFeedbacks().length) {
+    //     return this.getFeedbacks().map(item => {
+    //       return item.rating
+    //     })
+    //   } else {
+    //     return 1
+    //   }
+    // },
+    // getSumRating:function() {
+    //   if(this.getArrayRating() !==1) {
+    //     return this.getArrayRating().reduce((total,rating) => (total + rating))
+    //   } else {
+    //     return 0
+    //   }
+    // },
+    // getEndRating:function(){
+    //   if(this.getSumRating() !==0) {
+    //     return Math.round(this.getSumRating()/this.getArrayRating().length)
+    //   } else {
+    //     return Math.round(this.getSumRating()/this.getArrayRating())
+    //   }
+    // }
+
   },
   mounted() {
     this.$store.dispatch("getProductsAction");
     this.$store.dispatch("getProductAction", this.getProductToId());
-
-    this.getProductToId();
+    this.$store.dispatch("getFeedbacksAction");
+    // console.log(this.getFeedback);
+    // this.getProductToId();
+    // this.getFeedbacks();
+    // this.getArrayRating();
+    // this.getSumRating();
+    // this.getEndRating();
+    console.log(this.getFeedbacks());
+    console.log(this.getArrayRating());
+    console.log(this.getSumRating());
+    console.log(this.getEndRating());
+    // console.log(this.getArrayRating());
+    // console.log(this.getSumRating());
+    // // console.log(this.getSum()/this.getRating().length);
+    // console.log(this.getEndRating());
+    // console.log(false/true);
   }
 };
 </script>

@@ -56,18 +56,22 @@
       <b-tab title="Отзывы">
         <div>
           <div class="product__feedback">
-            <div class="product__feedback-btn" style="display:none;">
+            <div class="product__feedback-btn" v-if="this.userId === null">
               <a href="#" class="button">Оставить Отзыв</a>
             </div>
-            <div class="product__feedback-wrapper">
+            <div class="product__feedback-wrapper" v-else>
               <div class="title title_product">
                 <h2>Что вы думаете о нашем товаре?</h2>
               </div>
-              <form class="form">
+              <ValidationObserver v-slot="{ handleSubmit}">
+              <form class="form" @submit.prevent="handleSubmit(onSubmit)">
                 <div class="product__feedback-form">
-                  <div class="form-group">
+                    <ValidationProvider rules="required" name="textarea" v-slot="{errors,valid}">
+                  <div class="form-group" :class="{'error':errors.length, 'success':valid}">
                     <textarea placeholder="Ваш отзыв о товаре" v-model="feedback"></textarea>
+                    <p>{{errors[0]}}</p>
                   </div>
+                    </ValidationProvider>
                   <div class=" product__feedback-form__rating rating-star rating-click" >
                     <StarRating 
                     active-color="#F7D566" 
@@ -80,7 +84,7 @@
                     @rating-selected="setRating"
                     />
                   </div>
-                  <button type="submit" class="button button_green" @click.prevent="onSubmit()">
+                  <button type="submit" class="button button_green">
                     <svg class="icon-svg icon-svg-go go">
                       <use xlink:href="../../../assets/img/sprite.svg#go"></use>
                     </svg>
@@ -88,6 +92,7 @@
                   </button>
                 </div>
               </form>
+              </ValidationObserver>
             </div>
           </div>
         </div>
@@ -101,8 +106,12 @@ export default {
     data() {
         return {
             feedback:'',
-            rating:''
+            rating:'',
+            userId:JSON.parse(localStorage.getItem('userId'))
         }
+    },
+    mounted() {
+      console.log(this.userId)
     },
     methods: {
         setRating: function(rating){
@@ -110,16 +119,16 @@ export default {
         },
         onSubmit:async function() {
             var options = { year: 'numeric', month: 'long', day: 'numeric' };
-            // console.log(new Date().toLocaleString("ru-RU",options))
-              await this.axios.post( `http://localhost:3000/feedbacks`,
-        {
+                // console.log(new Date().toLocaleString("ru-RU",options))
+                  await this.axios.post( `http://localhost:3000/feedbacks`,
+            {
                 productId:this.$route.query.id,
                 date:new Date().toLocaleString("ru-RU",options),
                 text:this.feedback,
-                rating:this.rating,
+                rating:this.rating || 0,
                 name:JSON.parse(localStorage.getItem('userId')).fio
-        }
-      );
+            }
+          );
         }
     }
 };
