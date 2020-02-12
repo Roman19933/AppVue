@@ -1,22 +1,27 @@
 <template>
-    <div>
-<div class="registration">
-    <div class="registration__wrapper padding">
-        <!-- <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Авторизация</li>
-            </ol>
-        </nav> -->
+  <div>
+    <div class="registration">
+      <div class="registration__wrapper padding">
+        <b-breadcrumb>
+          <b-breadcrumb-item to="/">Главная</b-breadcrumb-item>
+          <b-breadcrumb-item active>{{ this.$route.name }}</b-breadcrumb-item>
+        </b-breadcrumb>
         <div class="registration__left">
-            <img src="img/reg-grain.png" alt="" class='registration__left-grain'>
-            <div class="registration__title_auth title title_registration">
-                <h2>Авторизация</h2>
-                <p>Пожалуйста, авторизуйтесь или зарегистрируйтесь, чтобы приступить к покупкам!</p>
-            </div>
-            <div class="registration__form">
-                <Auth />
-                <!-- <form action="#">
+          <img
+            src="img/reg-grain.png"
+            alt=""
+            class="registration__left-grain"
+          />
+          <div class="registration__title_auth title title_registration">
+            <h2>Авторизация</h2>
+            <p>
+              Пожалуйста, авторизуйтесь или зарегистрируйтесь, чтобы приступить
+              к покупкам!
+            </p>
+          </div>
+          <div class="registration__form">
+            <Auth />
+            <!-- <form action="#">
                     <div class="form-group form-group_registration">
                         <input type="email" placeholder="E-mail">
                         <img src="img/ok.png" alt="" class="form-group__img form-group__img_ok">
@@ -41,25 +46,23 @@
                         <a href="#" class="button button__registration">Регистрация</a>
                     </div>
                 </form> -->
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="registration__right registration__right-auth">
+        <img src="../assets/img/bg2.jpg" alt="" />
+      </div>
     </div>
-    <div class="registration__right registration__right-auth">
-        <img src="../assets/img/bg2.jpg" alt="">
-    </div>
-</div>
-    </div>
+  </div>
 </template>
 
 <script>
-import Auth from '../components/loyauts/form/auth'
-    export default {
-        components: {
-            Auth
-        }
-    }
+import Auth from "../components/loyauts/form/auth";
+export default {
+  components: {
+    Auth
+  }
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

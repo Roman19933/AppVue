@@ -272,7 +272,7 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false,
+      "isRecomended": true,
       "quantity": null,
       "count": 3
     },
@@ -289,8 +289,8 @@
       "discount": false,
       "isProduct": false,
       "timer": false,
-      "isMain": false,
-      "isRecomended": false,
+      "isMain": true,
+      "isRecomended": true,
       "quantity": null,
       "count": 15
     },
@@ -307,8 +307,8 @@
       "discount": false,
       "isProduct": false,
       "timer": false,
-      "isMain": false,
-      "isRecomended": false,
+      "isMain": true,
+      "isRecomended": true,
       "quantity": null,
       "count": 5
     },
@@ -326,7 +326,7 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false,
+      "isRecomended": true,
       "quantity": null,
       "count": 7
     },
@@ -344,7 +344,7 @@
       "isProduct": false,
       "timer": false,
       "isMain": false,
-      "isRecomended": false,
+      "isRecomended": true,
       "quantity": null,
       "count": 5
     },
@@ -361,7 +361,7 @@
       "discount": true,
       "isProduct": false,
       "timer": false,
-      "isMain": false,
+      "isMain": true,
       "isRecomended": false,
       "quantity": null,
       "count": 5
@@ -379,7 +379,7 @@
       "discount": false,
       "isProduct": false,
       "timer": false,
-      "isMain": false,
+      "isMain": true,
       "isRecomended": false,
       "quantity": null,
       "count": 5
@@ -397,7 +397,7 @@
       "discount": false,
       "isProduct": false,
       "timer": false,
-      "isMain": false,
+      "isMain": true,
       "isRecomended": false,
       "quantity": null,
       "count": 5

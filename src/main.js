@@ -9,6 +9,7 @@ const VueInputMask = require('vue-inputmask').default
 import VeeValidate from "./plugins/vee-validate"
 import VueSelect from "./plugins/vue-select"
 import NiceScroll from "./plugins/niceScroll"
+// import Swiper from "./plugins/swiper"
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import StarRating from 'vue-star-rating'
 Vue.use(BootstrapVue)
@@ -26,5 +27,6 @@ new Vue({
   VeeValidate,
   VueSelect,
   NiceScroll,
+  // Swiper,
   render: h => h(App)
 }).$mount('#app')

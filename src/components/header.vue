@@ -63,7 +63,7 @@
                             v-for="(subItem,index) in item.sub"
                             :key="index"
                             tag="li"
-                            :to="item.link + '/' + subItem.linkName"
+                            :to="{path: item.link + '/' + subItem.linkName, query:{name:subItem.name}}"
                           >
                             <a href="#">{{subItem.name}}</a>
                           </router-link>
@@ -212,7 +212,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getMenuHeader", "getProducts","addBasketProduct"]),
+    ...mapGetters(["getMenuHeader", "getProducts","addBasketProduct","getCategories"]),
     filterProductToSearch: function() {
       return this.getProducts.filter(item => {
         return (

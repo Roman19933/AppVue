@@ -2,14 +2,10 @@
   <div>
     <div class="basket" id="basket">
       <div class="basket__wrapper default-container padding">
-        <!-- <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Сброс пароля
-            </li>
-          </ol>
-        </nav> -->
+        <b-breadcrumb>
+          <b-breadcrumb-item to="/">Главная</b-breadcrumb-item>
+          <b-breadcrumb-item active>{{ this.$route.name }}</b-breadcrumb-item>
+        </b-breadcrumb>
         <div class="title basket__title">
           <h1>Корзина</h1>
         </div>
@@ -18,35 +14,65 @@
         </div>
         <form action="#">
           <div class="basket__items" v-if="this.addBasketProduct.length">
-            <div class="basket__item" v-for="(item,index) in addBasketProduct" :key="index">
+            <div
+              class="basket__item"
+              v-for="(item, index) in addBasketProduct"
+              :key="index"
+            >
               <div class="basket__item-left">
                 <img src="../assets/img/basket-img.png" alt="" />
                 <div class="basket__item-left__wrapper">
                   <div class="basket__item-title">
                     <div class="basket__item_title">
-                       <router-link tag="a" :to="{name:'Страница продукта', params:{id:item.id,name:item.name},query: {id:item.id}}">
-                            {{item.name}}
-                        </router-link>
-                      <span>#{{item.article}}</span>
+                      <router-link
+                        tag="a"
+                        :to="{
+                          name: 'Страница продукта',
+                          params: { id: item.id, name: item.name },
+                          query: { id: item.id }
+                        }"
+                      >
+                        {{ item.name }}
+                      </router-link>
+                      <span>#{{ item.article }}</span>
                     </div>
                   </div>
                   <div class="product__count basket__item-count">
                     <div class="count">
-                      <a href="#" class="count__minus preventDefault"   @click.prevent="item.quantity !== 0 ? minusCount(item) : disabled">
+                      <a
+                        href="#"
+                        class="count__minus preventDefault"
+                        @click.prevent="
+                          item.quantity !== 0 ? minusCount(item) : disabled
+                        "
+                      >
                         <svg class="icon-svg icon-svg-minus minus">
-                          <use xlink:href="../assets/img/sprite.svg#minus"></use>
+                          <use
+                            xlink:href="../assets/img/sprite.svg#minus"
+                          ></use>
                         </svg>
                         <!-- <img src="img/minus.png" alt=""> -->
                       </a>
-                      <input type="text" v-model="item.quantity" class="count__input" :disabled="item.count ==0" />
-                      <a href="#" class="count__plus preventDefault"  @click.prevent="item.count !== 0 ? plusCount(item) : disabled">
+                      <input
+                        type="text"
+                        v-model="item.quantity"
+                        class="count__input"
+                        :disabled="item.count == 0"
+                      />
+                      <a
+                        href="#"
+                        class="count__plus preventDefault"
+                        @click.prevent="
+                          item.count !== 0 ? plusCount(item) : disabled
+                        "
+                      >
                         <svg class="icon-svg icon-svg-plus plus">
                           <use xlink:href="../assets/img/sprite.svg#plus"></use>
                         </svg>
                         <!-- <img src="img/.png" alt=""> -->
                       </a>
                     </div>
-                    <span>{{item.newPrice}} грн</span>
+                    <span>{{ item.newPrice }} грн</span>
                   </div>
                 </div>
               </div>
@@ -60,7 +86,7 @@
               </div>
             </div>
           </div>
-            <p v-else>У вас нет товаров в корзине=)</p>
+          <p v-else>У вас нет товаров в корзине=)</p>
           <!-- <div class="basket__order">
             <div class="basket__order-wrapper">
               <div class="title basket__title basket__title_order">
@@ -452,47 +478,42 @@
 </template>
 
 <script>
-import { mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
-    data() {
-        return {
-            count:null
-        }
+  data() {
+    return {
+      count: null
+    };
+  },
+  computed: {
+    ...mapGetters(["addBasketProduct"]),
+    getPriceProduct: function() {
+      return this.addBasketProduct.map(item => {
+        return item.newPrice * item.quantity;
+      });
     },
-    computed: {
-        ...mapGetters(['addBasketProduct']),
-        getPriceProduct:function() {
-            return this.addBasketProduct.map(item => {
-                return item.newPrice * item.quantity
-            })
-        },
-        getTotalSum:function(){
-             return this.getPriceProduct.reduce((total,value) => total + value)   
-        }
-    },
-    mounted(){
-      this.getPriceProduct,
-      this.getTotalSum,
-      this.addBasketProduct
-
-        console.log(this.getPriceProduct)
-        console.log(this.getTotalSum)
-    },
-    methods: {
-        deleteProduct: function(index){
-            this.addBasketProduct.splice(index,1)
-        },
-        plusCount: function(item) {
-          item.quantity ++,
-          item.count --
-        },
-        minusCount: function(item) {
-          item.quantity --,
-          item.count ++
-        }
+    getTotalSum: function() {
+      return this.getPriceProduct.reduce((total, value) => total + value);
     }
-   
+  },
+  mounted() {
+    this.getPriceProduct, this.getTotalSum, this.addBasketProduct;
+
+    console.log(this.getPriceProduct);
+    console.log(this.getTotalSum);
+  },
+  methods: {
+    deleteProduct: function(index) {
+      this.addBasketProduct.splice(index, 1);
+    },
+    plusCount: function(item) {
+      item.quantity++, item.count--;
+    },
+    minusCount: function(item) {
+      item.quantity--, item.count++;
+    }
+  }
 };
 </script>
 

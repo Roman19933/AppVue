@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="classes">
     <div class="card__title">
       <router-link tag="a" :to="{name:'Страница продукта', params:{id:product.id,name:product.name},query: {id:product.id}}">
           {{product.name}}
@@ -8,12 +8,12 @@
     </div>
     <div class="card__info" v-if="!product.discount">
       <div class="card__info-rating rating-star">
-        <a href="#" class="active" v-for="(item,index) in getEndRating()" :key="index + 1">
+        <a href="#" class="active" v-for="(item,index) in getEndRating()" :key="index + 5">
           <svg class="icon-svg icon-svg-star rating">
             <use xlink:href="../../../assets/img/sprite.svg#star"></use>
           </svg>
         </a>
-        <a href="#" v-for="(item,index) in 5 - getEndRating()" :key="index">
+        <a href="#" v-for="(item,index) in 5 - getEndRating()" :key="index + 2">
           <svg class="icon-svg icon-svg-star rating">
             <use xlink:href="../../../assets/img/sprite.svg#star"></use>
           </svg>
@@ -59,6 +59,10 @@ export default {
     product: {
       type: Object,
       default: null
+    },
+    classes: {
+      type:String,
+      default:''
     }
   },
   mixins:[ratingMixins],
@@ -88,7 +92,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getFeedbacksAction")
-    console.log(this.getFeedback)
   }
 };
 </script>

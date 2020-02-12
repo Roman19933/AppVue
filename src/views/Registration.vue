@@ -2,16 +2,12 @@
   <div>
     <div class="registration">
       <div class="registration__wrapper padding">
-        <!-- <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Регистрация
-            </li>
-          </ol>
-        </nav> -->
+        <b-breadcrumb>
+          <b-breadcrumb-item to="/">Главная</b-breadcrumb-item>
+          <b-breadcrumb-item active>{{ this.$route.name }}</b-breadcrumb-item>
+        </b-breadcrumb>
         <div class="registration__left">
-          <img 
+          <img
             src="../assets/img/reg-grain.png"
             alt=""
             class="registration__left-grain"
@@ -33,7 +29,7 @@
 </template>
 
 <script>
-import RegistrationForm from "../components/loyauts/form/registration"
+import RegistrationForm from "../components/loyauts/form/registration";
 export default {
   components: {
     RegistrationForm

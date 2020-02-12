@@ -26,7 +26,10 @@
                 <ul>
                   <li>
                     <div class="products__filter-item">
-                      <a href="#" class="products__filter-item__title preventDefault">
+                      <a
+                        href="#"
+                        class="products__filter-item__title preventDefault"
+                      >
                         <svg class="icon-svg icon-svg-arrow filter-arrow">
                           <use xlink:href="img/sprite.svg#arrow" />
                         </svg>
@@ -297,7 +300,9 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="button button__filter">Сбросить фильтр</button>
+          <button type="submit" class="button button__filter">
+            Сбросить фильтр
+          </button>
         </form>
       </div>
       <div class="products__wrapper">
@@ -307,6 +312,13 @@
                 <li class="breadcrumb-item active" aria-current="page">Сброс пароля</li>
             </ol>
         </nav>-->
+        <b-breadcrumb>
+          <b-breadcrumb-item to="/">Главная</b-breadcrumb-item>
+          <b-breadcrumb-item to="/catalog">Каталог</b-breadcrumb-item>
+          <b-breadcrumb-item active>{{
+            this.$route.query.name
+          }}</b-breadcrumb-item>
+        </b-breadcrumb>
         <div class="products__right padding">
           <div class="products__title title">
             <h2>Товары</h2>
@@ -318,53 +330,11 @@
                 <span>Фильтры и сортировка</span>
               </a>
               <div class="dropdown">
-                <!-- <button
-                  class="dropdown__btn dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >Сортировать ...</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">По умолчанию</a>
-                  <a class="dropdown-item" href="#">
-                    Название
-                    <svg class="icon-svg icon-svg-arrow-up drop-arrow">
-                      <use xlink:href="img/sprite.svg#arrow-up" />
-                    </svg>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Название
-                    <svg class="icon-svg icon-svg-arrow-down drop-arrow">
-                      <use xlink:href="img/sprite.svg#arrow-down" />
-                    </svg>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Цена
-                    <svg class="icon-svg icon-svg-arrow-up drop-arrow">
-                      <use xlink:href="img/sprite.svg#arrow-up" />
-                    </svg>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Цена
-                    <svg class="icon-svg icon-svg-arrow-down drop-arrow">
-                      <use xlink:href="img/sprite.svg#arrow-down" />
-                    </svg>
-                  </a>
-                </div>-->
-                <!-- <input type="text" class="dropdown__btn" /> -->
-                <!-- <select v-model="filter" class="dropdown__btn">
-                  <option
-                    class="dropdown-item"
-                    v-for="(item,index) in filterList"
-                    :key="index"
-                  >{{item}}</option>
-                </select>-->
-                <!-- <b-dropdown id="dropdown-1" text="Сортировать..." class="dropdown__btn">
-                  <b-dropdown-item v-for="(item,index) in filterList" :key="index">{{item}}</b-dropdown-item>
-                </b-dropdown>-->
-                <v-select v-model="filter" :options="filterList" class="filterDropdown"></v-select>
+                <v-select
+                  v-model="filter"
+                  :options="filterList"
+                  class="filterDropdown"
+                ></v-select>
               </div>
             </div>
           </div>
@@ -375,14 +345,19 @@
             </p>
           </div>
           <div class="products__items">
-            <cardProduct v-for="(item,index) in getProductToCategory" :key="index" :product="item" />
+            <cardProduct
+              v-for="(item, index) in getProductToCategory"
+              :key="index"
+              :product="item"
+            />
           </div>
         </div>
         <div class="home__seo default-container">
           <p>
-            Не следует, однако забывать, что реализация намеченных плановых заданий обеспечивает широкому кругу
-            (специалистов) участие в формировании существенных финансовых и административных условий. Повседневная
-            практика показывает
+            Не следует, однако забывать, что реализация намеченных плановых
+            заданий обеспечивает широкому кругу (специалистов) участие в
+            формировании существенных финансовых и административных условий.
+            Повседневная практика показывает
           </p>
         </div>
       </div>
@@ -419,7 +394,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getProducts","addBasketProduct"]),
+    ...mapGetters(["getProducts", "addBasketProduct"]),
     getProductToCategory: function() {
       return this.getProducts.filter(item => {
         if (item.categoryLink == this.$route.params.id) {
@@ -430,14 +405,15 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getProductsAction");
-    console.log(this.addBasketProduct)
-    console.log(this.getProductToCategory)
+    console.log(this.addBasketProduct);
+    console.log(this.getProductToCategory);
+    console.log(this.$router.history.current.path.split("/"));
   },
   methods: {}
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .dropdown {
   width: 211px;
   height: 34px;

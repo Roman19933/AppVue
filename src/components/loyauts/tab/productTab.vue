@@ -57,7 +57,9 @@
         <div>
           <div class="product__feedback">
             <div class="product__feedback-btn" v-if="this.userId === null">
-              <a href="#" class="button">Оставить Отзыв</a>
+              <router-link tag="a" to="/enter" class="button">
+                  Оставить Отзыв
+              </router-link>
             </div>
             <div class="product__feedback-wrapper" v-else>
               <div class="title title_product">
@@ -95,6 +97,7 @@
               </ValidationObserver>
             </div>
           </div>
+        <feedbackSlider :feedback="feedbacks"/>
         </div>
       </b-tab>
     </b-tabs>
@@ -102,6 +105,7 @@
 </template>
 
 <script>
+import feedbackSlider from "../../slider/feedbackSlider"
 export default {
     data() {
         return {
@@ -109,6 +113,15 @@ export default {
             rating:'',
             userId:JSON.parse(localStorage.getItem('userId'))
         }
+    },
+    components: {
+      feedbackSlider
+    },
+    props: {
+      feedbacks: {
+        type:Array,
+        default:null
+      }
     },
     mounted() {
       console.log(this.userId)

@@ -2361,7 +2361,7 @@ body {
 .product__recomended .swiper-slide {
   width: -webkit-fit-content;
   width: -moz-fit-content;
-  width: fit-content;
+  width: fit-content!important;
   margin-right: 17px; }
 
 .product__feedback {
