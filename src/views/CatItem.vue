@@ -306,12 +306,6 @@
         </form>
       </div>
       <div class="products__wrapper">
-        <!-- <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Сброс пароля</li>
-            </ol>
-        </nav>-->
         <b-breadcrumb>
           <b-breadcrumb-item to="/">Главная</b-breadcrumb-item>
           <b-breadcrumb-item to="/catalog">Каталог</b-breadcrumb-item>
@@ -319,7 +313,7 @@
             this.$route.query.name
           }}</b-breadcrumb-item>
         </b-breadcrumb>
-        <div class="products__right padding">
+        <div class="products__right padding" id="product">
           <div class="products__title title">
             <h2>Товары</h2>
             <div class="products__filters">
@@ -346,11 +340,43 @@
           </div>
           <div class="products__items">
             <cardProduct
-              v-for="(item, index) in getProductToCategory"
+              v-for="(item, index) in displayedPosts"
               :key="index"
               :product="item"
             />
           </div>
+        </div>
+        <div class="products__pagination">
+          <nav>
+            <ul class="pagination">
+              <router-link
+                class="page-item"
+                tag="button"
+                :to="{ query: { page: this.page } }"
+              >
+                <span class="page-link" @click="page--">‹</span>
+              </router-link>
+              <router-link
+                class="page-item"
+                tag="button"
+                :to="{ query: { page: item } }"
+                v-for="(item, index) in pages"
+                :key="index"
+                activeClass="active"
+                exact
+              >
+                <span class="page-link" @click="page = item">{{ item }}</span>
+              </router-link>
+              <router-link
+                class="page-item"
+                tag="button"
+                :to="{ query: { page: this.page } }"
+                @click="page++"
+              >
+                <span class="page-link" @click="page++">›</span>
+              </router-link>
+            </ul>
+          </nav>
         </div>
         <div class="home__seo default-container">
           <p>
@@ -362,6 +388,14 @@
         </div>
       </div>
     </div>
+    <!-- <div class="loader" v-if="isLoader">
+      <div class="loader__wrapper">
+        <div class="load">
+          <hr />
+          <hr />
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -372,7 +406,11 @@ export default {
   data() {
     return {
       filterList: ["От A-Z", "От Z-A", "По возростанию", "По спаданию"],
-      filter: "Сортировать..."
+      filter: "Сортировать...",
+      page: 1,
+      perPage: 3,
+      pages: []
+      // isLoader:false
     };
   },
   components: {
@@ -381,16 +419,19 @@ export default {
   watch: {
     filter: function(val) {
       if (val == "От A-Z") {
-        this.getProductToCategory.sort((a, b) => a.name.localeCompare(b.name));
+        this.displayedPosts.sort((a, b) => a.name.localeCompare(b.name));
       } else if (val == "От Z-A") {
-        this.getProductToCategory.sort((a, b) => b.name.localeCompare(a.name));
+        this.displayedPosts.sort((a, b) => b.name.localeCompare(a.name));
       } else if (val == "По возростанию") {
         console.log("ok");
-        this.getProductToCategory.sort((a, b) => a.newPrice - b.newPrice);
+        this.displayedPosts.sort((a, b) => a.newPrice - b.newPrice);
       } else if (val == "По спаданию") {
         console.log("ok");
-        this.getProductToCategory.sort((a, b) => b.newPrice - a.newPrice);
+        this.displayedPosts.sort((a, b) => b.newPrice - a.newPrice);
       }
+    },
+    getProductToCategory: function() {
+      this.setPages();
     }
   },
   computed: {
@@ -400,16 +441,39 @@ export default {
         if (item.categoryLink == this.$route.params.id) {
           return item;
         }
+        // this.isLoader=false
       });
+    },
+    displayedPosts() {
+      return this.paginate(this.getProductToCategory);
+    }
+  },
+  methods: {
+    setPages() {
+      let numberOfPages = Math.ceil(
+        this.getProductToCategory.length / this.perPage
+      );
+      for (let index = 1; index <= numberOfPages; index++) {
+        this.pages = index;
+      }
+    },
+    paginate(posts) {
+      let page = this.page;
+      let perPage = this.perPage;
+      let from = page * perPage - perPage;
+      let to = page * perPage;
+      return posts.slice(from, to);
     }
   },
   mounted() {
+    // this.isLoader=true
     this.$store.dispatch("getProductsAction");
-    console.log(this.addBasketProduct);
-    console.log(this.getProductToCategory);
-    console.log(this.$router.history.current.path.split("/"));
-  },
-  methods: {}
+    console.log(this.getProductToCategory.length);
+    console.log(this.pages);
+    console.dir(this.displayedPosts);
+    console.log(this.setPages());
+    // this.setPages()
+  }
 };
 </script>
 
