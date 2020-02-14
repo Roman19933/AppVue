@@ -2,13 +2,13 @@
   <div class="category__product">
     <div class="card card_product" v-for="(item,index) in getCategories" :key="index">
       <div class="card__title card__title-product">
-        <router-link tag="a" :to="{path:'/catalog/' + item.linkName, query:{name:item.name}}">{{ item.name }}</router-link>
+        <router-link tag="a" :to="{path:'/catalog/' + item.linkName, query:{page:1}}">{{ item.name }}</router-link>
         <div class="card__info-price card__title-count">
           <span>{{getLengthToProduct(item.linkName).length}} товара</span>
         </div>
       </div>
       <div class="card__image card__image_catalog">
-        <router-link tag="a" :to="{path:'/catalog/' + item.linkName, params:{name:item.name}}">
+        <router-link tag="a" :to="{path:'/catalog/' + item.linkName,query:{page:1}}">
           <img src="../../../assets/img/cat-1.png" alt />
         </router-link>
       </div>

@@ -310,7 +310,7 @@
           <b-breadcrumb-item to="/">Главная</b-breadcrumb-item>
           <b-breadcrumb-item to="/catalog">Каталог</b-breadcrumb-item>
           <b-breadcrumb-item active>{{
-            this.$route.query.name
+            this.getCategoryName[0].name
           }}</b-breadcrumb-item>
         </b-breadcrumb>
         <div class="products__right padding" id="product">
@@ -346,7 +346,7 @@
             />
           </div>
         </div>
-        <div class="products__pagination">
+        <div class="products__pagination" v-if="this.getProductToCategory.length > this.perPage">
           <nav>
             <ul class="pagination">
               <router-link
@@ -354,7 +354,7 @@
                 tag="button"
                 :to="{ query: { page: this.page } }"
               >
-                <span class="page-link" @click="page--">‹</span>
+                <span class="page-link">‹</span>
               </router-link>
               <router-link
                 class="page-item"
@@ -371,9 +371,9 @@
                 class="page-item"
                 tag="button"
                 :to="{ query: { page: this.page } }"
-                @click="page++"
+                @click="console.log('ok')"
               >
-                <span class="page-link" @click="page++">›</span>
+                <span class="page-link">›</span>
               </router-link>
             </ul>
           </nav>
@@ -409,7 +409,7 @@ export default {
       filter: "Сортировать...",
       page: 1,
       perPage: 3,
-      pages: []
+      pages: [],
       // isLoader:false
     };
   },
@@ -423,10 +423,8 @@ export default {
       } else if (val == "От Z-A") {
         this.displayedPosts.sort((a, b) => b.name.localeCompare(a.name));
       } else if (val == "По возростанию") {
-        console.log("ok");
         this.displayedPosts.sort((a, b) => a.newPrice - b.newPrice);
       } else if (val == "По спаданию") {
-        console.log("ok");
         this.displayedPosts.sort((a, b) => b.newPrice - a.newPrice);
       }
     },
@@ -435,7 +433,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getProducts", "addBasketProduct"]),
+    ...mapGetters(["getProducts", "addBasketProduct","getCategories"]),
     getProductToCategory: function() {
       return this.getProducts.filter(item => {
         if (item.categoryLink == this.$route.params.id) {
@@ -443,6 +441,13 @@ export default {
         }
         // this.isLoader=false
       });
+    },
+    getCategoryName:function(){
+      return this.getCategories.filter(item => {
+        if(item.linkName == this.$route.params.id) {
+          return item
+        }
+      })
     },
     displayedPosts() {
       return this.paginate(this.getProductToCategory);
@@ -468,10 +473,12 @@ export default {
   mounted() {
     // this.isLoader=true
     this.$store.dispatch("getProductsAction");
+    this.$store.dispatch("getCategoriesAction");
     console.log(this.getProductToCategory.length);
     console.log(this.pages);
     console.dir(this.displayedPosts);
-    console.log(this.setPages());
+    console.log(this.getProductToCategory);
+    console.log(this.perPage);
     // this.setPages()
   }
 };
