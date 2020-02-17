@@ -46,8 +46,12 @@ export default {
     this.getMainProduct()
     this.settings = Object.assign(this.settings, {
       slidesPerView: "auto",
+      // setWrapperSize:true,
+      // centeredSlides: false,
       observer: true,
       observeParents: true,
+      // cssMode:true,
+      // loop:true,
       navigation: {
         nextEl: this.$el.getElementsByClassName("swiper-button-next")[0],
         prevEl: this.$el.getElementsByClassName("swiper-button-prev")[0]

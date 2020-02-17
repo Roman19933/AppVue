@@ -348,7 +348,20 @@
         </div>
         <div class="products__pagination" v-if="this.getProductToCategory.length > this.perPage">
           <nav>
-            <ul class="pagination">
+            <div class="pagination">
+              <button class="page-item" @click="page--" :to="{ query: { page: this.page } }" :disabled="page == 1">
+               <span class="page-link">‹</span>
+              </button>
+
+              <button class="page-item" v-for="(item, index) in pages" :key="index" @click="page = item" :class="{'active': page == item}">
+                <span class="page-link">{{item}}</span>
+              </button>
+
+              <button class="page-item" @click="page++" :disabled="page == pages.length">
+               <span class="page-link">›</span>
+              </button>
+            </div>
+            <!-- <div class="pagination">
               <router-link
                 class="page-item"
                 tag="button"
@@ -375,7 +388,7 @@
               >
                 <span class="page-link">›</span>
               </router-link>
-            </ul>
+            </div> -->
           </nav>
         </div>
         <div class="home__seo default-container">
@@ -459,7 +472,7 @@ export default {
         this.getProductToCategory.length / this.perPage
       );
       for (let index = 1; index <= numberOfPages; index++) {
-        this.pages = index;
+         this.pages.push(index);
       }
     },
     paginate(posts) {
@@ -480,6 +493,7 @@ export default {
     console.log(this.getProductToCategory);
     console.log(this.perPage);
     // this.setPages()
+    // console.log(this.getProductToCategory);
   }
 };
 </script>
@@ -490,15 +504,6 @@ export default {
   height: 34px;
 }
 .filterDropdown {
-  // .vs__dropdown-toggle {
-  //   border: 1px solid #b8adab;
-  //   border-radius: 15px;
-  //   font-size: 15px;
-  //   padding: 5px 25px;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  // }
   height: 100%;
   .vs {
     &__dropdown {

@@ -710,5 +710,17 @@
       "name": "Саша Белийqasdasd",
       "id": 36
     }
+  ],
+  "town": [
+    {
+      "id":1,
+      "name":"Lutsk",
+      "region":"Волинська"
+    },
+    {
+      "id":2,
+      "name":"Rivne",
+      "region":"Волинська"
+    }
   ]
 }
