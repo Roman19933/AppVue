@@ -3003,8 +3003,8 @@ body {
     width: fit-content; }
   .basket__feedback-content {
     display: block; }
-    .basket__feedback-content.feedback-toggle {
-      display: none; }
+    /* .basket__feedback-content.feedback-toggle {
+      display: none; } */
   .basket__feedback .form-group {
     margin-top: 17px;
     width: 494px; }

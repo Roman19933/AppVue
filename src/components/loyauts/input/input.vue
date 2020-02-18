@@ -1,7 +1,14 @@
 <template>
   <div
     class="form-group form-group_registration"
-    :class="{'error':this.message.length, 'success':isValid, 'form-group__width': this.width}"
+    :class="{
+      'error':this.message.length, 
+      'success':isValid, 
+      'form-group__width': this.width,
+      'form-group_adress': this.adress,
+      'form-group_house': this.house,
+      'form-group_number': this.number,
+      }"
   >
     <input
       :type="type"
@@ -80,6 +87,18 @@ export default {
       default: false
     },
     width: {
+      type: Boolean,
+      default: false
+    },
+    adress: {
+      type: Boolean,
+      default: false
+    },
+    house: {
+      type: Boolean,
+      default: false
+    },
+    number: {
       type: Boolean,
       default: false
     }
