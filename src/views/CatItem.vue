@@ -549,6 +549,7 @@ export default {
     }
     &__search {
       pointer-events: none;
+      margin-top: 0;
       &:focus {
         font-size: 15px;
       }
